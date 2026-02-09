@@ -6,6 +6,7 @@
 	"semi": false,
 	"bracketSpacing": true,
 	"bracketSameLine": true,
+	"objectWrap": "preserve",
 	"tabWidth": 2,
 	"plugins": ["prettier-plugin-svelte"],
 	"overrides": [

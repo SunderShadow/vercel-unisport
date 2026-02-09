@@ -1,67 +1,67 @@
-@forward "env";
+@forward 'env';
 
 @font-face {
-  src: url("/fonts/Geist.ttf") format('truetype');
-  font-family: 'Geist';
+	src: url('/fonts/Geist.ttf') format('truetype');
+	font-family: 'Geist';
 }
 
 :root {
-  font-family: 'Geist', sans-serif;
-  font-size: 16px;
+	font-family: 'Geist', sans-serif;
+	font-size: 16px;
 }
 
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 a {
-  text-decoration: none;
-  color: var(--text-color);
+	text-decoration: none;
+	color: var(--text-color);
 }
 
 section + section {
-  margin-top: 50px;
-  margin-bottom: 50px;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
 
-  color: var(--button-text-color);
-  background-color: var(--button-bg-color);
+	color: var(--button-text-color);
+	background-color: var(--button-bg-color);
 
-  border: none;
-  border-radius: .71em;
+	border: none;
+	border-radius: 0.71em;
 
-  padding: 1em 2em;
+	padding: 1em 2em;
 
-  font-weight: 500;
-  cursor: pointer;
+	font-weight: 500;
+	cursor: pointer;
 }
 
 .badge {
-  padding: .75em 2em;
-  border: 1px solid #E5E7EB;
-  border-radius: 5em;
+	padding: 0.75em 2em;
+	border: 1px solid #e5e7eb;
+	border-radius: 5em;
 }
 
 h2 {
-  font-size: 3rem;
-  margin-top: 20px;
-  margin-bottom: 20px;
+	font-size: 3rem;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .container {
-  max-width: 1480px;
-  margin-left: auto;
-  margin-right: auto;
+	max-width: 1480px;
+	margin-left: auto;
+	margin-right: auto;
 
-  padding-left: 20px;
-  padding-right: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
 }

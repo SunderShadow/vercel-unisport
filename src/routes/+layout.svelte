@@ -1,9 +1,9 @@
 <script lang="ts">
-  import './layout.scss'
+	import './layout.scss'
 	import 'normalize.css'
 
 	import favicon from '$lib/assets/favicon.svg'
-  import Header from "./+layout/Header.svelte"
+	import Header from './+layout/Header.svelte'
 
 	let { children } = $props()
 </script>
@@ -14,25 +14,23 @@
 </svelte:head>
 
 <div class="header">
-  <Header />
+	<Header />
 </div>
 
-<main>
-
-</main>
+<main></main>
 
 {@render children()}
 
 <style lang="scss">
-  .header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 2;
-  }
+	.header {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 2;
+	}
 
-  main {
-    margin-top: var(--header-height);
-  }
+	main {
+		margin-top: var(--header-height);
+	}
 </style>
