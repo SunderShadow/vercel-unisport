@@ -21,6 +21,11 @@ a {
   color: var(--text-color);
 }
 
+section + section {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 button {
   display: flex;
   align-items: center;
@@ -38,4 +43,25 @@ button {
 
   font-weight: 500;
   cursor: pointer;
+}
+
+.badge {
+  padding: .75em 2em;
+  border: 1px solid #E5E7EB;
+  border-radius: 5em;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 1480px;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-left: 20px;
+  padding-right: 20px;
 }
