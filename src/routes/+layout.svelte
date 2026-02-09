@@ -1,5 +1,9 @@
 <script lang="ts">
+  import './layout.scss'
+	import 'normalize.css'
+
 	import favicon from '$lib/assets/favicon.svg'
+  import Header from "./+layout/Header.svelte"
 
 	let { children } = $props()
 </script>
@@ -9,6 +13,26 @@
 	<title>Юниспорт — твой помощник в мире спорта</title>
 </svelte:head>
 
-<header></header>
+<div class="header">
+  <Header />
+</div>
+
+<main>
+
+</main>
 
 {@render children()}
+
+<style lang="scss">
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  main {
+    margin-top: var(--header-height);
+  }
+</style>
