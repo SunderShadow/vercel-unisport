@@ -9,7 +9,7 @@
 <section class="container">
   <div class="about badge">О проекте</div>
   <h2>Спорт — круче с нами</h2>
-  <p>Юниспорт - это не просто агрегатор. Мы собираем большое сообщество людей с одинаковыми интересами</p>
+  <p class="text-content">Юниспорт - это не просто агрегатор. Мы собираем большое сообщество людей с одинаковыми интересами</p>
 
   <div class="cards">
     <Card icon={BrainIcon} title="ИИ-рекомендации" content="Персонализированные предложения на основе ваших интересов и активности"/>
@@ -20,25 +20,6 @@
 </section>
 
 <style lang="scss">
-  .about {
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: .75em;
-  }
-
-  h2 {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-
-  section > p {
-    max-width: 890px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
   p {
     color: var(--text-content-color);
