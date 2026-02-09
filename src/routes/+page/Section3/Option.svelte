@@ -20,7 +20,7 @@
 	<p><span class="cost">{cost}</span> / {period}</p>
 	<p class="content">{@render content()}</p>
 
-	<button>
+	<button class:accent={premium}>
 		{@render button()}
 	</button>
 
@@ -107,10 +107,6 @@
 			background: linear-gradient(90deg, #f66d49 0%, #f43f5e 100%);
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
-		}
-
-		button {
-			background: linear-gradient(90deg, #f66d49 0%, #f43f5e 100%);
 		}
 	}
 </style>

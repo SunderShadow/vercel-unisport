@@ -2,11 +2,13 @@
 	import Section1 from './+page/Section1/Section1.svelte'
 	import Section2 from './+page/Section2/Section2.svelte'
 	import Section3 from './+page/Section3/Section3.svelte'
+	import Section4 from './+page/Section4/Section4.svelte'
 </script>
 
 <Section1 />
 <Section2 />
 <Section3 />
+<Section4 />
 
 <style lang="scss">
 	:global {
