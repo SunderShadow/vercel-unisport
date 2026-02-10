@@ -13,6 +13,19 @@
 
 1. `pnpm install`
 
+### Используя docker-compose
+```yaml
+  build: ./front-end
+  environment:
+      - NODE_ENV=production
+  ports:
+      - "5173:5173"
+  volumes:
+      - ./front-end:/home/node/app
+  working_dir: /home/node/app
+  command: ["pnpm", "run", "dev", "--host"]
+```
+
 ## Используемые пакеты
 
 - [vite](https://vite.dev/) - Сборщик пакетов
