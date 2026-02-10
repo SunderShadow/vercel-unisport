@@ -10,8 +10,8 @@
 </script>
 
 <section class="container">
-	<div class="about badge">Большой каталог мероприятий</div>
-	<h2>Ближайшие спортивные мероприятия</h2>
+	<div class="about badge">Инфополе о спорте</div>
+	<h2>Спортивный блог</h2>
   <Slider>
     {#snippet slides()}
       {#each Array(3) as _}

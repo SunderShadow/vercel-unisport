@@ -8,6 +8,7 @@
 	import Section4 from './+page/Section4/Section4.svelte'
 	import Section5 from './+page/Section5/Section5.svelte'
   import Section7 from "./+page/Section7/Section7.svelte"
+  import Section8 from "./+page/Section8/Section8.svelte"
 </script>
 
 <Section1 />
@@ -16,6 +17,7 @@
 <Section4 />
 <Section5 />
 <Section7 />
+<Section8 />
 
 <style lang="scss">
 	:global {
