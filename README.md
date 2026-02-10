@@ -11,20 +11,14 @@
 
 ## Установка
 
-1. `pnpm install`
+### Используя docker
+1. `docker build . -t=unisport-front`
+2. `docker run unisport-front`
 
-### Используя docker-compose
-```yaml
-  build: ./front-end
-  environment:
-      - NODE_ENV=production
-  ports:
-      - "5173:5173"
-  volumes:
-      - ./front-end:/home/node/app
-  working_dir: /home/node/app
-  command: ["pnpm", "run", "dev", "--host"]
-```
+### Лоакльный сервер
+1. `pnpm install`
+2. `pnpm run build`
+3. `node build`
 
 ## Используемые пакеты
 
