@@ -10,7 +10,7 @@
 </script>
 
 <header>
-	<enhanced:img src={logo} width="168" height="37" alt="Юниспорт"/>
+	<enhanced:img src={logo} width="168" height="37" alt="Юниспорт" />
 
 	<nav>
 		{#each nav as link}

@@ -21,11 +21,9 @@
 	</div>
 
 	<div class="head">
-		<div class="bg_img _3" style:--img={`url(${bg3.img.src})`}>
-		</div>
+		<div class="bg_img _3" style:--img={`url(${bg3.img.src})`}></div>
 
-		<div class="bg_img _4" style:--img={`url(${bg4.img.src})`}>
-		</div>
+		<div class="bg_img _4" style:--img={`url(${bg4.img.src})`}></div>
 
 		<h1>
 			Юниспорт —<br />
@@ -58,8 +56,8 @@
 
 		z-index: -1;
 
-    background-image: var(--img);
-    background-size: 100%;
+		background-image: var(--img);
+		background-size: 100%;
 
 		&._1 {
 			top: 0;
@@ -75,16 +73,16 @@
 			left: 69px;
 			top: -142px;
 
-      width: 165px;
-      height: 165px;
+			width: 165px;
+			height: 165px;
 		}
 
 		&._4 {
 			bottom: -209px;
 			right: 0;
 
-      width: 241px;
-      height: 241px;
+			width: 241px;
+			height: 241px;
 		}
 	}
 

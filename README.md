@@ -12,10 +12,12 @@
 ## Установка
 
 ### Используя docker
+
 1. `docker build . -t=unisport-front`
 2. `docker run unisport-front`
 
 ### Лоакльный сервер
+
 1. `pnpm install`
 2. `pnpm run build`
 3. `node build`

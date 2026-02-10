@@ -1,9 +1,13 @@
 <script lang="ts">
+  // Для Section7 & Section8
+  import '@splidejs/svelte-splide/css'
+
 	import Section1 from './+page/Section1/Section1.svelte'
 	import Section2 from './+page/Section2/Section2.svelte'
 	import Section3 from './+page/Section3/Section3.svelte'
 	import Section4 from './+page/Section4/Section4.svelte'
-  import Section5 from "./+page/Section5/Section5.svelte"
+	import Section5 from './+page/Section5/Section5.svelte'
+  import Section7 from "./+page/Section7/Section7.svelte"
 </script>
 
 <Section1 />
@@ -11,6 +15,7 @@
 <Section3 />
 <Section4 />
 <Section5 />
+<Section7 />
 
 <style lang="scss">
 	:global {

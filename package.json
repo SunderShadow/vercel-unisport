@@ -36,6 +36,7 @@
 		]
 	},
 	"dependencies": {
+		"@splidejs/svelte-splide": "^0.2.9",
 		"normalize.css": "^8.0.1"
 	}
 }

@@ -44,9 +44,9 @@ button {
 	font-weight: 500;
 	cursor: pointer;
 
-  &.accent {
-    background: linear-gradient(90deg, #f66d49 0%, #f43f5e 100%);
-  }
+	&.accent {
+		background: linear-gradient(90deg, #f66d49 0%, #f43f5e 100%);
+	}
 }
 
 .badge {
