@@ -4,6 +4,7 @@
 
 	import favicon from '$lib/assets/favicon.svg'
 	import Header from './+layout/Header.svelte'
+  import Footer from "./+layout/Footer.svelte"
 
 	let { children } = $props()
 </script>
@@ -17,9 +18,11 @@
 	<Header />
 </div>
 
-<main></main>
+<main>
+  {@render children()}
+</main>
 
-{@render children()}
+<Footer />
 
 <style lang="scss">
 	.header {
