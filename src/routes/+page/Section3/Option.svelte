@@ -20,7 +20,7 @@
 	<p><span class="cost">{cost}</span> / {period}</p>
 	<p class="content">{@render content()}</p>
 
-	<button class:accent={premium}>
+	<button class="button" class:accent={premium}>
 		{@render button()}
 	</button>
 

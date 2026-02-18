@@ -31,7 +31,7 @@
 			content="У вас списывается с баланса 1 занятие и вы спокойно занимаетесь спортом" />
 	</div>
 
-	<button class="more accent">
+	<button class="button accent more">
 		<MagnifierIcon />
 
 		Узнать подробнее

@@ -3,20 +3,31 @@
 	import type { Snippet } from 'svelte'
 
 	type Props = {
-		slides: Snippet
+		slides: Snippet,
+		options: Options
 	}
 
-	let options: Options = {
+	let { slides, options }: Props = $props()
+
+	let defaultOptions: Options = {
+		type: 'loop',
 		arrows: false,
 		perPage: 4,
 		gap: 20,
-		padding: 10
+		padding: 10,
+		breakpoints: {
+			768: {
+				perPage: 2,
+			},
+			425: {
+				perPage: 1,
+			}
+		},
+		...{options}
 	}
-
-	let { slides } = $props()
 </script>
 
-<Splide hasTrack={false} {options}>
+<Splide hasTrack={false} options={defaultOptions}>
 	<SplideTrack>
 		{@render slides()}
 	</SplideTrack>

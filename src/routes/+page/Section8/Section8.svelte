@@ -47,7 +47,7 @@
 		{/snippet}
 	</Slider>
 
-	<button class="more accent">
+	<button class="button more accent">
 		<MagnifierIcon />
 
 		Узнать подробнее

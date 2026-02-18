@@ -32,7 +32,7 @@
 		<p>Идеально подходит для новичков, активных людей и семьянинов</p>
 	</div>
 
-	<button class="register">
+	<button class="button register">
 		<EnterIcon />
 
 		Зарегистрироваться
