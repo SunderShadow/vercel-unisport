@@ -64,7 +64,7 @@
 </footer>
 
 <style lang="scss">
-	@use "$scss/mixins/scr";
+	@use '$scss/mixins/scr';
 
 	footer {
 		position: relative;
@@ -128,30 +128,30 @@
 	.fond_logo {
 		width: fit-content;
 
-    @include scr.desktop {
-      margin-left: auto;
-    }
+		@include scr.desktop {
+			margin-left: auto;
+		}
 
-    @include scr.tablet {
+		@include scr.tablet {
 			width: 145px;
 			height: 83px;
 
 			img {
-        width: 100%;
+				width: 100%;
 				height: 100%;
 			}
-    }
+		}
 	}
 
-  .fond_text {
-    margin: 0;
-    max-width: 452px;
+	.fond_text {
+		margin: 0;
+		max-width: 452px;
 
-    @include scr.desktop {
-      text-align: right;
-      margin-left: auto;
-    }
-  }
+		@include scr.desktop {
+			text-align: right;
+			margin-left: auto;
+		}
+	}
 
 	.copyright {
 		position: absolute;
@@ -165,19 +165,19 @@
 		}
 	}
 
-  @include scr.desktop {
-    .col {
-      &._1 {
-        grid-column: span 5;
-      }
+	@include scr.desktop {
+		.col {
+			&._1 {
+				grid-column: span 5;
+			}
 
-      &._2 {
-        grid-column: span 6;
-      }
+			&._2 {
+				grid-column: span 6;
+			}
 
-      &._3 {
-        grid-column: 13 / 19;
-      }
-    }
-  }
+			&._3 {
+				grid-column: 13 / 19;
+			}
+		}
+	}
 </style>

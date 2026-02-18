@@ -3,7 +3,7 @@
 	import type { Snippet } from 'svelte'
 
 	type Props = {
-		slides: Snippet,
+		slides: Snippet
 		options?: Options
 	}
 
@@ -17,16 +17,16 @@
 		padding: 10,
 		breakpoints: {
 			1024: {
-				perPage: 3,
+				perPage: 3
 			},
 			768: {
-				perPage: 2,
+				perPage: 2
 			},
 			425: {
-				perPage: 1,
+				perPage: 1
 			}
 		},
-		...{options}
+		...{ options }
 	}
 </script>
 

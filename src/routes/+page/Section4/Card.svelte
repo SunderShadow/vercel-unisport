@@ -18,7 +18,7 @@
 </div>
 
 <style lang="scss">
-  @use "$scss/mixins/scr";
+	@use '$scss/mixins/scr';
 
 	div {
 		display: flex;
@@ -32,14 +32,14 @@
 
 		text-align: center;
 
-    @include scr.mobile {
-      padding: 20px;
-    }
+		@include scr.mobile {
+			padding: 20px;
+		}
 	}
 
 	h3 {
 		margin-top: 20px;
-    margin-bottom: 0;
+		margin-bottom: 0;
 
 		font-size: 1.25em;
 		font-weight: 600;
@@ -47,7 +47,7 @@
 
 	p {
 		margin-top: 20px;
-    margin-bottom: 0;
+		margin-bottom: 0;
 
 		color: var(--text-content-color);
 		line-height: 1.5em;

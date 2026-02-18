@@ -12,7 +12,8 @@
 	<h2>Как работает единый абонемент</h2>
 	<p class="text-content">
 		Вы можете в одном месте купить и собрать несколько спортивных абонементов наших партнеров и
-		удобно им пользоваться. Приходя на тренировку, достаточно показать QR-код абонемента и заниматься
+		удобно им пользоваться. Приходя на тренировку, достаточно показать QR-код абонемента и
+		заниматься
 	</p>
 
 	<div class="cards">
@@ -39,7 +40,7 @@
 </section>
 
 <style lang="scss">
-	@use "$scss/mixins/scr";
+	@use '$scss/mixins/scr';
 
 	p {
 		color: var(--text-content-color);
@@ -51,9 +52,9 @@
 		grid-template-columns: repeat(4, 1fr);
 		gap: 20px;
 
-    @include scr.tablet {
-      grid-template-columns: 1fr 1fr;
-    }
+		@include scr.tablet {
+			grid-template-columns: 1fr 1fr;
+		}
 
 		@include scr.mobile {
 			grid-template-columns: 1fr;

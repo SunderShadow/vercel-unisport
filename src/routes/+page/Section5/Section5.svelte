@@ -1,7 +1,7 @@
 <script lang="ts">
-import FastArticle from '$lib/components/FastArticle/FastArticle.svelte'
-import Slider from '$lib/components/Slider/Slider.svelte'
-import { SplideSlide } from '@splidejs/svelte-splide'
+	import FastArticle from '$lib/components/FastArticle/FastArticle.svelte'
+	import Slider from '$lib/components/Slider/Slider.svelte'
+	import { SplideSlide } from '@splidejs/svelte-splide'
 </script>
 
 <section class="container">
@@ -14,28 +14,44 @@ import { SplideSlide } from '@splidejs/svelte-splide'
 			{#snippet slides()}
 				<SplideSlide>
 					<article class="category">
-						<enhanced:img src="./assets/card1.png?format=webp" width="335" height="335" loading="lazy" />
+						<enhanced:img
+							src="./assets/card1.png?format=webp"
+							width="335"
+							height="335"
+							loading="lazy" />
 						<h3>Фитнес</h3>
 						<a href="#"></a>
 					</article>
 				</SplideSlide>
 				<SplideSlide>
 					<article class="category">
-						<enhanced:img src="./assets/card2.png?format=webp" width="335" height="335" loading="lazy" />
+						<enhanced:img
+							src="./assets/card2.png?format=webp"
+							width="335"
+							height="335"
+							loading="lazy" />
 						<h3>Йога</h3>
 						<a href="#"></a>
 					</article>
 				</SplideSlide>
 				<SplideSlide>
 					<article class="category">
-						<enhanced:img src="./assets/card3.png?format=webp" width="335" height="335" loading="lazy" />
+						<enhanced:img
+							src="./assets/card3.png?format=webp"
+							width="335"
+							height="335"
+							loading="lazy" />
 						<h3>Футбольчик</h3>
 						<a href="#"></a>
 					</article>
 				</SplideSlide>
 				<SplideSlide>
 					<article class="category">
-						<enhanced:img src="./assets/card3.png?format=webp" width="335" height="335" loading="lazy" />
+						<enhanced:img
+							src="./assets/card3.png?format=webp"
+							width="335"
+							height="335"
+							loading="lazy" />
 						<h3>Футбольчик</h3>
 						<a href="#"></a>
 					</article>
