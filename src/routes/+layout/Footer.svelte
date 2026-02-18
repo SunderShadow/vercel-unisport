@@ -19,6 +19,7 @@
 		</div>
 
 		<p>Общество с ограниченной ответственностью «Инновиум»</p>
+
 		<p>
 			ИНН: 6168125402<br />
 			ОГРН: 1256100023057
@@ -49,10 +50,10 @@
 		</div>
 	</div>
 	<div class="col _3">
-		<div class="font_logo">
+		<div class="fond_logo">
 			<enhanced:img src={fond_logo} width="212" height="121" alt="Фонд содействия инновациям" />
 		</div>
-		<p class="font_text">
+		<p class="fond_text">
 			проект реализован при поддержке Фонда содействия инновациям в рамках программы «Студенческий
 			стартап» мероприятия «Платформа университетского технологического предпринимательства»
 			федерального проекта «Технологии»
@@ -63,11 +64,14 @@
 </footer>
 
 <style lang="scss">
+	@use "$scss/mixins/scr";
+
 	footer {
 		position: relative;
 
 		display: grid;
 		grid-template-columns: repeat(18, 1fr);
+		gap: 20px;
 		background-color: var(--button-bg-color);
 
 		padding: 58px 20px;
@@ -75,6 +79,10 @@
 		font-size: 14px;
 
 		color: #fff;
+
+		@include scr.tablet {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	.social {
@@ -84,8 +92,14 @@
 		margin-top: 30px;
 	}
 
+	p {
+		max-width: 245px;
+	}
+
 	.nav {
 		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
 		justify-content: space-between;
 
 		& > div {
@@ -104,17 +118,40 @@
 		span {
 			font-size: 1rem;
 			margin-bottom: 25px;
+
+			@include scr.mobile {
+				font-size: 1.15rem;
+			}
 		}
 	}
 
-	.font_text {
-		text-align: right;
+	.fond_logo {
+		width: fit-content;
+
+    @include scr.desktop {
+      margin-left: auto;
+    }
+
+    @include scr.tablet {
+			width: 145px;
+			height: 83px;
+
+			img {
+        width: 100%;
+				height: 100%;
+			}
+    }
 	}
 
-	.font_logo {
-		width: fit-content;
-		margin-left: auto;
-	}
+  .fond_text {
+    margin: 0;
+    max-width: 452px;
+
+    @include scr.desktop {
+      text-align: right;
+      margin-left: auto;
+    }
+  }
 
 	.copyright {
 		position: absolute;
@@ -122,19 +159,25 @@
 		bottom: 58px;
 		transform: translateX(-50%);
 		font-weight: 700;
-	}
 
-	.col {
-		&._1 {
-			grid-column: span 5;
-		}
-
-		&._2 {
-			grid-column: span 6;
-		}
-
-		&._3 {
-			grid-column: 13 / 19;
+		@include scr.tablet {
+			bottom: 20px;
 		}
 	}
+
+  @include scr.desktop {
+    .col {
+      &._1 {
+        grid-column: span 5;
+      }
+
+      &._2 {
+        grid-column: span 6;
+      }
+
+      &._3 {
+        grid-column: 13 / 19;
+      }
+    }
+  }
 </style>
