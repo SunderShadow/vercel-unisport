@@ -52,7 +52,12 @@
 				text-align: center;
 				margin-left: auto;
 				margin-right: auto;
+
 				color: var(--text-content-color);
+
+				@include scr.desktop {
+          font-size: 18px;
+				}
 			}
 		}
 	}

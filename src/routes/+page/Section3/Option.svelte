@@ -32,17 +32,27 @@
 </article>
 
 <style lang="scss">
+  @use "$scss/mixins/scr";
+
 	article {
 		padding: 40px 20px;
 		border-radius: 14px;
 		border: 1px solid #e5e7eb;
+
+    box-shadow: 0 1px 2px 0 #00000040;
+
+    @include scr.mobile {
+      padding: 20px;
+    }
 	}
 
 	h3 {
 		margin-top: 0;
+
+    color: var(--text-content-color);
+
 		font-weight: 600;
 		font-size: 1.25em;
-		color: var(--text-content-color);
 	}
 
 	p {
@@ -51,16 +61,22 @@
 
 	p.content {
 		line-height: 1.3em;
+		max-width: 371px;
 	}
 
 	.cost {
 		font-size: 2.25em;
 		font-weight: 600;
 		color: var(--text-color);
+
+    @include scr.mobile {
+			font-size: 1.5em;
+    }
 	}
 
 	button {
 		margin-top: 20px;
+
 		font-weight: 600;
 		font-size: 1.125em;
 	}
@@ -74,6 +90,10 @@
 		position: relative;
 		list-style: none;
 		font-weight: 500;
+
+		@include scr.mobile {
+			font-size: .85em;
+		}
 
 		&::before {
 			content: '';

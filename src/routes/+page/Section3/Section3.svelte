@@ -45,7 +45,7 @@
 				'Можно добавлять близких в свою подписку'
 			]}>
 			{#snippet content()}
-				Первые 2 месяца бесплатно, далее 1590₽/год. Подписка дает вам доступ к премиум<br /> функциям
+				Первые 2 месяца бесплатно, далее 1590₽/год. Подписка дает вам доступ к премиум функциям
 				нашего сервиса
 			{/snippet}
 			{#snippet button()}
@@ -64,7 +64,7 @@
 				'Приоритетная клиентская поддержка'
 			]}>
 			{#snippet content()}
-				Стандартный вариант подписки на месяц.<br /> Подписка дает вам доступ к премиум<br /> функциям
+				Стандартный вариант подписки на месяц.<br /> Подписка дает вам доступ к премиум функциям
 				нашего сервиса
 			{/snippet}
 			{#snippet button()}
@@ -75,13 +75,21 @@
 </section>
 
 <style lang="scss">
+  @use "$scss/mixins/scr";
+
 	.options {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 20px;
 
-		:global > article:not(.premium) {
-			height: calc(100% - 52px);
+    @include scr.desktop {
+      :global > article:not(.premium) {
+        height: calc(100% - 52px);
+      }
+    }
+
+		@include scr.mobile {
+      grid-template-columns: repeat(1, 1fr);
 		}
 	}
 </style>
