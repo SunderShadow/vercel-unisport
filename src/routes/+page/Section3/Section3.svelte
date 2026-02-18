@@ -64,8 +64,8 @@
 				'Приоритетная клиентская поддержка'
 			]}>
 			{#snippet content()}
-				Стандартный вариант подписки на месяц.<br /> Подписка дает вам доступ к премиум функциям
-				нашего сервиса
+				Стандартный вариант подписки на месяц.<br /> Подписка дает вам доступ к премиум функциям нашего
+				сервиса
 			{/snippet}
 			{#snippet button()}
 				Получить
@@ -75,21 +75,21 @@
 </section>
 
 <style lang="scss">
-  @use "$scss/mixins/scr";
+	@use '$scss/mixins/scr';
 
 	.options {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 20px;
 
-    @include scr.desktop {
-      :global > article:not(.premium) {
-        height: calc(100% - 52px);
-      }
-    }
+		@include scr.desktop {
+			:global > article:not(.premium) {
+				height: calc(100% - 52px);
+			}
+		}
 
 		@include scr.mobile {
-      grid-template-columns: repeat(1, 1fr);
+			grid-template-columns: repeat(1, 1fr);
 		}
 	}
 </style>

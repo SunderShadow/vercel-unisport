@@ -7,7 +7,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		alias: {
-			'$scss/*': "./src/lib/scss/*"
+			'$scss/*': './src/lib/scss/*'
 		}
 	}
 }

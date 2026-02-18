@@ -35,7 +35,7 @@
 </section>
 
 <style lang="scss">
-	@use "$scss/mixins/scr";
+	@use '$scss/mixins/scr';
 
 	p {
 		color: var(--text-content-color);
@@ -47,8 +47,8 @@
 		grid-template-columns: repeat(4, 1fr);
 		gap: 20px;
 
-    @include scr.laptop {
-      grid-template-columns: repeat(2, 1fr);
+		@include scr.laptop {
+			grid-template-columns: repeat(2, 1fr);
 		}
 
 		@include scr.mobile {

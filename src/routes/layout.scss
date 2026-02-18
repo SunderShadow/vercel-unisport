@@ -10,13 +10,14 @@
 	font-family: 'Geist', sans-serif;
 	font-size: 16px;
 
-  @include scr.mobile {
-    font-size: 14px;
-  }
+	@include scr.mobile {
+		font-size: 14px;
+	}
 }
 
-html, body {
-  min-height: 100%;
+html,
+body {
+	min-height: 100%;
 }
 
 *,
@@ -53,11 +54,11 @@ button:not(.default) {
 	font-weight: 500;
 	cursor: pointer;
 
-  box-shadow:
-      0 4px 6px -4px #0000001A,
-      0 10px 15px -3px #0000001A;
+	box-shadow:
+		0 4px 6px -4px #0000001a,
+		0 10px 15px -3px #0000001a;
 
-  &.accent {
+	&.accent {
 		background: linear-gradient(90deg, #f66d49 0%, #f43f5e 100%);
 	}
 }

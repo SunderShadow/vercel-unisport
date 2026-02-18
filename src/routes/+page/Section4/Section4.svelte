@@ -4,7 +4,7 @@
 	import MoneyIcon from './assets/Money.svelte'
 	import QRIcon from './assets/QR.svelte'
 	import WalkIcon from './assets/Walk.svelte'
-  import MagnifierIcon from "$lib/components/icons/Magnifier.svelte"
+	import MagnifierIcon from '$lib/components/icons/Magnifier.svelte'
 </script>
 
 <section class="container">
@@ -32,7 +32,7 @@
 	</div>
 
 	<button class="more accent">
-    <MagnifierIcon />
+		<MagnifierIcon />
 
 		Узнать подробнее
 	</button>

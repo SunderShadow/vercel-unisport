@@ -32,24 +32,24 @@
 </article>
 
 <style lang="scss">
-  @use "$scss/mixins/scr";
+	@use '$scss/mixins/scr';
 
 	article {
 		padding: 40px 20px;
 		border-radius: 14px;
 		border: 1px solid #e5e7eb;
 
-    box-shadow: 0 1px 2px 0 #00000040;
+		box-shadow: 0 1px 2px 0 #00000040;
 
-    @include scr.mobile {
-      padding: 20px;
-    }
+		@include scr.mobile {
+			padding: 20px;
+		}
 	}
 
 	h3 {
 		margin-top: 0;
 
-    color: var(--text-content-color);
+		color: var(--text-content-color);
 
 		font-weight: 600;
 		font-size: 1.25em;
@@ -69,9 +69,9 @@
 		font-weight: 600;
 		color: var(--text-color);
 
-    @include scr.mobile {
+		@include scr.mobile {
 			font-size: 1.5em;
-    }
+		}
 	}
 
 	button {
@@ -92,7 +92,7 @@
 		font-weight: 500;
 
 		@include scr.mobile {
-			font-size: .85em;
+			font-size: 0.85em;
 		}
 
 		&::before {
