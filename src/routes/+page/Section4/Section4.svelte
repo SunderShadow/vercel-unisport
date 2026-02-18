@@ -11,7 +11,7 @@
 	<div class="about badge">Единый абонемент</div>
 	<h2>Как работает единый абонемент</h2>
 	<p class="text-content">
-		Вы можете в одном месте купить и собрать несколько спортивных абонементов наших партнеров и<br />
+		Вы можете в одном месте купить и собрать несколько спортивных абонементов наших партнеров и
 		удобно им пользоваться. Приходя на тренировку, достаточно показать QR-код абонемента и заниматься
 	</p>
 
@@ -39,6 +39,8 @@
 </section>
 
 <style lang="scss">
+	@use "$scss/mixins/scr";
+
 	p {
 		color: var(--text-content-color);
 		margin-bottom: 20px;
@@ -48,10 +50,18 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 20px;
+
+    @include scr.tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+
+		@include scr.mobile {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	button.more {
-		width: 370px;
+		max-width: 370px;
 		margin-top: 20px;
 		margin-left: auto;
 		margin-right: auto;
