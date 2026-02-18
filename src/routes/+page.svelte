@@ -22,19 +22,29 @@
 <Section9 />
 
 <style lang="scss">
+	@use "$scss/mixins/scr";
+
 	:global {
 		section.container {
 			.badge {
 				width: fit-content;
 				margin-left: auto;
 				margin-right: auto;
-				font-size: 0.75em;
+				font-size: .75em;
+
+        @include scr.mobile {
+          font-size: .85em;
+        }
 			}
 
 			h2 {
 				text-align: center;
 				margin-top: 20px;
 				margin-bottom: 20px;
+
+        @include scr.mobile {
+          font-size: 1.5715em;
+        }
 			}
 
 			.text-content {

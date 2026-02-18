@@ -14,6 +14,8 @@
 </div>
 
 <style lang="scss">
+  @use "$scss/mixins/scr";
+
 	div {
 		display: flex;
 		flex-direction: column;
@@ -26,18 +28,29 @@
 		border-radius: 14px;
 
 		text-align: center;
+
+    @include scr.mobile {
+      padding: 30px 20px;
+    }
 	}
 
 	h3 {
 		margin-top: 20px;
+    margin-bottom: 0;
+
 		font-size: 1.25em;
 		font-weight: 600;
 	}
 
 	p {
 		margin-top: 20px;
+    margin-bottom: 0;
 		color: var(--text-content-color);
 
 		line-height: 1.5em;
+
+    @include scr.mobile {
+      margin-top: 11px;
+    }
 	}
 </style>

@@ -35,6 +35,8 @@
 </section>
 
 <style lang="scss">
+	@use "$scss/mixins/scr";
+
 	p {
 		color: var(--text-content-color);
 		margin-bottom: 20px;
@@ -44,5 +46,13 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 20px;
+
+    @include scr.laptop {
+      grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include scr.mobile {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>
