@@ -31,7 +31,7 @@
 	}
 
 	h1 {
-		width: 66%;
+		max-width: 231px;
 		margin-top: 20px;
 
 		font-size: 1em;
@@ -47,6 +47,11 @@
 		border: none;
 		color: #fff;
 		font-weight: 700;
+	}
+
+	img {
+    width: 100%;
+		object-fit:  cover;
 	}
 
 	time {

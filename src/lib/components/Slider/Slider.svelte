@@ -4,10 +4,10 @@
 
 	type Props = {
 		slides: Snippet,
-		options: Options
+		options?: Options
 	}
 
-	let { slides, options }: Props = $props()
+	let { slides, options = {} }: Props = $props()
 
 	let defaultOptions: Options = {
 		type: 'loop',
@@ -16,6 +16,9 @@
 		gap: 20,
 		padding: 10,
 		breakpoints: {
+			1024: {
+				perPage: 3,
+			},
 			768: {
 				perPage: 2,
 			},
