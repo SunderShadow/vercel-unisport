@@ -1,3 +1,4 @@
+@use '$scss/mixins/scr';
 @forward 'env';
 
 @font-face {
@@ -8,6 +9,10 @@
 :root {
 	font-family: 'Geist', sans-serif;
 	font-size: 16px;
+
+  @include scr.mobile {
+    font-size: 14px;
+  }
 }
 
 html, body {

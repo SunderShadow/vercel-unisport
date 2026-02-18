@@ -40,15 +40,23 @@
 </section>
 
 <style lang="scss">
+	@use "$scss/mixins/scr";
+
 	section {
 		position: relative;
 		margin-top: calc(var(--header-height) * -1);
 		height: 710px;
-		padding-top: var(--header-height);
+    padding: var(--header-height) 30px 30px;
 
-		border-bottom-left-radius: 100px;
+    border-bottom-left-radius: 100px;
 		border-bottom-right-radius: 100px;
+
 		overflow: hidden;
+
+		@include scr.mobile {
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+		}
 	}
 
 	.bg_img {
@@ -58,6 +66,13 @@
 
 		background-image: var(--img);
 		background-size: 100%;
+
+		:global {
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+		}
 
 		&._1 {
 			top: 0;
@@ -75,6 +90,14 @@
 
 			width: 165px;
 			height: 165px;
+
+      @include scr.mobile {
+        left: -60px;
+				top: -129px;
+
+        width: 120px;
+        height: 120px;
+      }
 		}
 
 		&._4 {
@@ -83,6 +106,14 @@
 
 			width: 241px;
 			height: 241px;
+
+      @include scr.mobile {
+				bottom: -129px;
+        right: -50px;
+
+        width: 120px;
+        height: 120px;
+      }
 		}
 	}
 
@@ -95,23 +126,43 @@
 		margin-right: auto;
 		margin-top: 158px;
 
+    @include scr.mobile {
+      max-width: 258px;
+		}
+
 		h1 {
 			font-size: 4rem;
 			letter-spacing: -3px;
 			line-height: 1.3;
 			margin: 0;
+
+      @include scr.tablet {
+				font-size: 3rem;
+			}
+
+			@include scr.mobile {
+				font-size: 2rem;
+				letter-spacing: -1px;
+			}
 		}
 
 		p {
 			text-align: right;
+			@include scr.mobile {
+				line-height: 28px;
+			}
 		}
 	}
 
 	.register {
-		position: absolute;
-		bottom: 50px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+		max-width: 370px;
+
+    margin-top: 116px;
+
+		@include scr.mobile {
+      margin-top: 153px;
+		}
 	}
 </style>
