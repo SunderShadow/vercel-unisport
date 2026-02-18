@@ -56,7 +56,7 @@
 
 <style lang="scss">
 	button.more {
-		width: 370px;
+		max-width: 370px;
 		margin-top: 20px;
 		margin-left: auto;
 		margin-right: auto;
