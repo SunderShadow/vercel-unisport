@@ -1,5 +1,6 @@
 @use '$scss/mixins/scr';
-@forward 'env';
+@use '$scss/mixins/bg';
+@forward '../env';
 
 @font-face {
 	src: url('/fonts/Geist.ttf') format('truetype');
@@ -31,17 +32,12 @@ a {
 	color: var(--text-color);
 }
 
-section + section {
-	margin-top: 50px;
-	margin-bottom: 50px;
-}
-
 button.button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
-	width: 100%;
+	width: fit-content;
 
 	color: var(--button-text-color);
 	background-color: var(--button-bg-color);
@@ -58,12 +54,25 @@ button.button {
 		0 4px 6px -4px #0000001a,
 		0 10px 15px -3px #0000001a;
 
+	&.round {
+		width: 56px;
+		height: 56px;
+		border-radius: 10em;
+		padding: 0;
+
+		> * {
+			width: 23px;
+			height: 23px;
+		}
+	}
+
 	&.accent {
-		background: linear-gradient(90deg, #f66d49 0%, #f43f5e 100%);
+		@include bg.accent;
 	}
 }
 
 .badge {
+	width: fit-content;
 	padding: 0.75em 2em;
 	border: 1px solid #e5e7eb;
 	border-radius: 5em;

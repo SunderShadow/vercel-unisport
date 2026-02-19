@@ -1,12 +1,11 @@
 <script lang="ts">
-	import './layout.scss'
+	import '../+layout/layout.scss'
 	import 'normalize.css'
 
 	import favicon from '$lib/assets/favicon.svg'
-	import Header from './+layout/Header.svelte'
-	import Footer from './+layout/Footer.svelte'
+	import Header from '../+layout/Header.svelte'
 
-	let { children } = $props()
+	let { children, data } = $props()
 </script>
 
 <svelte:head>
@@ -15,14 +14,12 @@
 </svelte:head>
 
 <div class="header">
-	<Header />
+	<Header user={data.user} />
 </div>
 
 <main>
 	{@render children()}
 </main>
-
-<Footer />
 
 <style lang="scss">
 	.header {
@@ -34,6 +31,6 @@
 	}
 
 	main {
-		margin-top: var(--header-height);
+		padding-top: var(--header-height);
 	}
 </style>

@@ -1,5 +1,16 @@
 <script lang="ts">
+	import type { Auth } from '$lib/types'
+
 	import logo from '$lib/assets/img/logo.png?enhanced&format=webp'
+	import { goto } from '$app/navigation'
+
+	type Props = {
+		user: null | Auth.UserData
+	}
+
+	let { user }: Props = $props()
+
+	const authorized = !!user
 
 	// Mobile only
 	let navVisible = $state(false)
@@ -14,6 +25,16 @@
 	function toggleNav() {
 		navVisible = !navVisible
 	}
+
+	function handleAuthClick() {
+		if (authorized) {
+			goto('/account')
+		} else {
+			login()
+		}
+	}
+
+	function login() {}
 </script>
 
 <header>
@@ -26,7 +47,7 @@
 	</button>
 
 	<div id="logo">
-		<enhanced:img src={logo} width="168" height="37" alt="Юниспорт" />
+		<a href="/"><enhanced:img src={logo} width="168" height="37" alt="Юниспорт" /></a>
 	</div>
 
 	<nav class:visible={navVisible}>
@@ -48,22 +69,33 @@
 		</svg>
 	</button>
 
-	<button id="auth" class="button">
-		<span>Вход</span>
-		<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path
-				d="M8.33203 8.41312V6.50099C8.33203 5.99387 8.53152 5.50751 8.8866 5.14892C9.24169 4.79032 9.72328 4.58887 10.2254 4.58887H20.0712C20.5734 4.58887 21.055 4.79032 21.4101 5.14892C21.7652 5.50751 21.9646 5.99387 21.9646 6.50099V17.9738C21.9646 18.4809 21.7652 18.9672 21.4101 19.3258C21.055 19.6844 20.5734 19.8859 20.0712 19.8859H10.2254C9.72328 19.8859 9.24169 19.6844 8.8866 19.3258C8.53152 18.9672 8.33203 18.4809 8.33203 17.9738V16.0616"
-				stroke="#272327"
-				stroke-width="1.4375"
-				stroke-linecap="round"
-				stroke-linejoin="round" />
-			<path
-				d="M12.8766 16.0621L16.6634 12.2378L12.8766 8.41357M2.27344 12.2378H15.906"
-				stroke="#272327"
-				stroke-width="1.4375"
-				stroke-linecap="round"
-				stroke-linejoin="round" />
-		</svg>
+	<button id="auth" class:no-auth={!user} class="button" onclick={handleAuthClick}>
+		{#if authorized}
+			<span>{user.name}</span>
+			<img src={user.imgUrl} alt="" />
+		{:else}
+			<span class="no-auth">Вход</span>
+			<svg
+				class="no-auth"
+				width="25"
+				height="25"
+				viewBox="0 0 25 25"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M8.33203 8.41312V6.50099C8.33203 5.99387 8.53152 5.50751 8.8866 5.14892C9.24169 4.79032 9.72328 4.58887 10.2254 4.58887H20.0712C20.5734 4.58887 21.055 4.79032 21.4101 5.14892C21.7652 5.50751 21.9646 5.99387 21.9646 6.50099V17.9738C21.9646 18.4809 21.7652 18.9672 21.4101 19.3258C21.055 19.6844 20.5734 19.8859 20.0712 19.8859H10.2254C9.72328 19.8859 9.24169 19.6844 8.8866 19.3258C8.53152 18.9672 8.33203 18.4809 8.33203 17.9738V16.0616"
+					stroke="#272327"
+					stroke-width="1.4375"
+					stroke-linecap="round"
+					stroke-linejoin="round" />
+				<path
+					d="M12.8766 16.0621L16.6634 12.2378L12.8766 8.41357M2.27344 12.2378H15.906"
+					stroke="#272327"
+					stroke-width="1.4375"
+					stroke-linecap="round"
+					stroke-linejoin="round" />
+			</svg>
+		{/if}
 	</button>
 </header>
 
@@ -149,6 +181,23 @@
 		padding: 0;
 		cursor: pointer;
 
+		&:not(.no-auth) {
+			background: none;
+			box-shadow: none;
+			width: auto;
+			color: var(--text-color);
+			font-size: 14px;
+			font-weight: 500;
+
+			img {
+				width: 2rem;
+				height: 2rem;
+				object-fit: cover;
+				object-position: center;
+				border-radius: 10em;
+			}
+		}
+
 		@media (min-width: 1100px) {
 			svg {
 				display: none;
@@ -180,6 +229,7 @@
 		display: flex;
 		gap: 8px;
 		align-items: center;
+		color: var(--text-color);
 
 		margin-left: auto;
 
