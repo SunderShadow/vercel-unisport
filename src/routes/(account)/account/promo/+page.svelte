@@ -51,7 +51,7 @@
 		flex-wrap: wrap;
 
 		input {
-			width: 315px;
+			max-width: 315px;
 			font-size: 1.2em;
 		}
 

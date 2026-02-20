@@ -28,7 +28,7 @@
 
 	function handleAuthClick() {
 		if (authorized) {
-			goto('/account')
+			goto('/account/promo')
 		} else {
 			login()
 		}
