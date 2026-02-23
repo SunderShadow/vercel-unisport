@@ -32,43 +32,51 @@ a {
 	color: var(--text-color);
 }
 
-button.button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 10px;
-	width: fit-content;
+button {
+  cursor: pointer;
+  &.icon {
+    background: none;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 1px 2px 0 #0000000D;
+    border-radius: 10em;
+  }
 
-	color: var(--button-text-color);
-	background-color: var(--button-bg-color);
+  &.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
 
-	border: none;
-	border-radius: 0.71em;
+    color: var(--button-text-color);
+    background-color: var(--button-bg-color);
 
-	padding: 1em 2em;
+    border: none;
+    border-radius: 0.71em;
 
-	font-weight: 500;
-	cursor: pointer;
+    padding: 1em 2em;
 
-	box-shadow:
-		0 4px 6px -4px #0000001a,
-		0 10px 15px -3px #0000001a;
+    font-weight: 500;
+    cursor: pointer;
 
-	&.round {
-		width: 56px;
-		height: 56px;
-		border-radius: 10em;
-		padding: 0;
+    box-shadow: 0 4px 6px -4px #0000001a, 0 10px 15px -3px #0000001a;
 
-		> * {
-			width: 23px;
-			height: 23px;
-		}
-	}
+    &.round {
+      width: 56px;
+      height: 56px;
+      border-radius: 10em;
+      padding: 0;
 
-	&.accent {
-		@include bg.accent;
-	}
+      > * {
+        width: 23px;
+        height: 23px;
+      }
+    }
+
+    &.accent {
+      @include bg.accent;
+    }
+  }
 }
 
 .badge {

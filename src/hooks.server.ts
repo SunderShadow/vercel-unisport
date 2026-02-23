@@ -9,7 +9,7 @@ export const handle: Handle = ({ event, resolve }) => {
 		subscription: {
 			active: true,
 			type: 'Премиум на год',
-			nextPayment: new Date(Date.parse('01-02-2026'))
+			nextPayment: new Date(Date.parse('01-02-2026')),
 		}
 	}
 

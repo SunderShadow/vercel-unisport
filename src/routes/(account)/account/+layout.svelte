@@ -7,14 +7,17 @@
 	let user = $derived(data.user)
 	let subscription = $derived(data.user.subscription)
 
-	let pages = [{ name: 'Промокод', href: '/promo' }]
+	let pages = [
+		{ name: 'Промокод', href: '/promo' },
+		{ name: 'Аналитика', href: '/analyse' }
+	]
 
 	for (let page of pages) {
 		page.href = '/account' + page.href
 	}
 </script>
 
-<main class="container">
+<div class="container">
 	<section class="header">
 		<div id="account-credentials" class="box">
 			<div class="thumb">
@@ -97,46 +100,50 @@
 		{/if}
 	</section>
 
-	<section class="box" id="nav">
-		<div class="nav">
-			{#each pages as navPage}
-				<a href={navPage.href} class:active={navPage.href === page.url.pathname}>
-					<span>{navPage.name}</span>
-					<svg
-						width="6"
-						height="10"
-						viewBox="0 0 6 10"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M0.75 8.75L4.75 4.75L0.75 0.75"
-							stroke="#272327"
-							stroke-width="1.5"
-							stroke-linecap="round"
-							stroke-linejoin="round" />
-					</svg>
-				</a>
-			{/each}
+	<section id="nav">
+		<div class="box">
+			<div class="nav">
+				{#each pages as navPage}
+					<a href={navPage.href} class:active={navPage.href === page.url.pathname}>
+						<span>{navPage.name}</span>
+						<svg
+							width="6"
+							height="10"
+							viewBox="0 0 6 10"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M0.75 8.75L4.75 4.75L0.75 0.75"
+								stroke="#272327"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+					</a>
+				{/each}
+			</div>
+			<button id="tg-notifications" class="button">
+				<svg
+					width="23"
+					height="23"
+					viewBox="0 0 23 23"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M11.5013 1.91663C6.2113 1.91663 1.91797 6.20996 1.91797 11.5C1.91797 16.79 6.2113 21.0833 11.5013 21.0833C16.7913 21.0833 21.0846 16.79 21.0846 11.5C21.0846 6.20996 16.7913 1.91663 11.5013 1.91663ZM15.948 8.43329C15.8042 9.94746 15.1813 13.6275 14.8651 15.3237C14.7309 16.0425 14.4626 16.282 14.2134 16.3108C13.6576 16.3587 13.2359 15.9466 12.6992 15.592C11.8559 15.0362 11.3767 14.6912 10.5621 14.1545C9.61339 13.5316 10.2267 13.1866 10.773 12.6308C10.9167 12.487 13.3701 10.2541 13.418 10.0529C13.4246 10.0224 13.4237 9.99075 13.4154 9.96069C13.407 9.93063 13.3915 9.90306 13.3701 9.88038C13.3126 9.83246 13.2359 9.85163 13.1688 9.86121C13.0826 9.88038 11.7409 10.7716 9.12464 12.535C8.7413 12.7937 8.3963 12.9279 8.08963 12.9183C7.74464 12.9087 7.09297 12.7266 6.60422 12.5637C6.00047 12.372 5.53089 12.2666 5.56922 11.9312C5.58839 11.7587 5.82797 11.5862 6.27839 11.4041C9.07672 10.187 10.9359 9.38204 11.8655 8.99871C14.5296 7.88704 15.0759 7.69538 15.4401 7.69538C15.5167 7.69538 15.6988 7.71454 15.8138 7.81038C15.9096 7.88704 15.9384 7.99246 15.948 8.06913C15.9384 8.12663 15.9576 8.29913 15.948 8.43329Z"
+						fill="white" />
+				</svg>
+				Уведомления в телеграм
+			</button>
 		</div>
-		<button id="tg-notifications" class="button">
-			<svg
-				width="23"
-				height="23"
-				viewBox="0 0 23 23"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg">
-				<path
-					d="M11.5013 1.91663C6.2113 1.91663 1.91797 6.20996 1.91797 11.5C1.91797 16.79 6.2113 21.0833 11.5013 21.0833C16.7913 21.0833 21.0846 16.79 21.0846 11.5C21.0846 6.20996 16.7913 1.91663 11.5013 1.91663ZM15.948 8.43329C15.8042 9.94746 15.1813 13.6275 14.8651 15.3237C14.7309 16.0425 14.4626 16.282 14.2134 16.3108C13.6576 16.3587 13.2359 15.9466 12.6992 15.592C11.8559 15.0362 11.3767 14.6912 10.5621 14.1545C9.61339 13.5316 10.2267 13.1866 10.773 12.6308C10.9167 12.487 13.3701 10.2541 13.418 10.0529C13.4246 10.0224 13.4237 9.99075 13.4154 9.96069C13.407 9.93063 13.3915 9.90306 13.3701 9.88038C13.3126 9.83246 13.2359 9.85163 13.1688 9.86121C13.0826 9.88038 11.7409 10.7716 9.12464 12.535C8.7413 12.7937 8.3963 12.9279 8.08963 12.9183C7.74464 12.9087 7.09297 12.7266 6.60422 12.5637C6.00047 12.372 5.53089 12.2666 5.56922 11.9312C5.58839 11.7587 5.82797 11.5862 6.27839 11.4041C9.07672 10.187 10.9359 9.38204 11.8655 8.99871C14.5296 7.88704 15.0759 7.69538 15.4401 7.69538C15.5167 7.69538 15.6988 7.71454 15.8138 7.81038C15.9096 7.88704 15.9384 7.99246 15.948 8.06913C15.9384 8.12663 15.9576 8.29913 15.948 8.43329Z"
-					fill="white" />
-			</svg>
-			Уведомления в телеграм
-		</button>
 	</section>
 
-	<section id="main" class="box">
-		{@render children()}
+	<section id="main">
+		<div class="box">
+			{@render children()}
+		</div>
 	</section>
-</main>
+</div>
 
 <style lang="scss">
 	@use "$scss/mixins/scr";
@@ -312,7 +319,7 @@
 		margin-top: 20px;
 	}
 
-	#main {
+	#main > div {
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
