@@ -33,50 +33,53 @@ a {
 }
 
 button {
-  cursor: pointer;
-  &.icon {
-    background: none;
-    border: 1px solid #E5E7EB;
-    box-shadow: 0 1px 2px 0 #0000000D;
-    border-radius: 10em;
-  }
+	cursor: pointer;
 
-  &.button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: fit-content;
+	&.icon {
+		display: flex;
+		background: none;
+		border: 1px solid #e5e7eb;
+		box-shadow: 0 1px 2px 0 #0000000d;
+		border-radius: 10em;
 
-    color: var(--button-text-color);
-    background-color: var(--button-bg-color);
+		> * {
+			margin: auto;
+		}
+	}
 
-    border: none;
-    border-radius: 0.71em;
+	&.button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		width: fit-content;
 
-    padding: 1em 2em;
+		color: var(--button-text-color);
+		background-color: var(--button-bg-color);
 
-    font-weight: 500;
-    cursor: pointer;
+		border: none;
+		border-radius: 0.71em;
 
-    box-shadow: 0 4px 6px -4px #0000001a, 0 10px 15px -3px #0000001a;
+		padding: 1em 2em;
 
-    &.round {
-      width: 56px;
-      height: 56px;
-      border-radius: 10em;
-      padding: 0;
+		font-weight: 500;
+		cursor: pointer;
 
-      > * {
-        width: 23px;
-        height: 23px;
-      }
-    }
+		box-shadow:
+			0 4px 6px -4px #0000001a,
+			0 10px 15px -3px #0000001a;
 
-    &.accent {
-      @include bg.accent;
-    }
-  }
+		&.round {
+			width: 56px;
+			height: 56px;
+			border-radius: 10em;
+			padding: 0;
+		}
+	}
+
+	&.accent {
+		@include bg.accent;
+	}
 }
 
 .badge {
