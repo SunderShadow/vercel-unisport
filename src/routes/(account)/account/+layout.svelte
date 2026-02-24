@@ -12,6 +12,7 @@
 		{ name: 'Аналитика', href: '/analyse' },
 		{ name: 'Расписание', href: '/timetable' },
 		{ name: 'Мои адреса', href: '/address' },
+		{ name: 'Избранное', href: '/favorite' }
 	]
 
 	for (let page of pages) {
