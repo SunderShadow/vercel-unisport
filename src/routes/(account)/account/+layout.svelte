@@ -1,6 +1,7 @@
 <script lang="ts">
 	import './layout.scss'
 	import { page } from '$app/state'
+	import { goto } from '$app/navigation'
 
 	let { data, children } = $props()
 
@@ -15,8 +16,9 @@
 		{ name: 'Избранное', href: '/favorite' }
 	]
 
+	const baseUrl = '/account'
 	for (let page of pages) {
-		page.href = '/account' + page.href
+		page.href = baseUrl + page.href
 	}
 </script>
 
@@ -56,7 +58,12 @@
 				<span>ID{user.id}</span>
 			</div>
 
-			<button class="to_settings">
+			<button
+				class="to_settings"
+				onclick={() => {
+					goto(baseUrl)
+				}}
+				aria-label="К аккаунту">
 				<svg
 					width="15"
 					height="15"
@@ -169,6 +176,7 @@
 		grid-template-columns: 1fr 2fr;
 		gap: 20px;
 		margin-top: 50px;
+		margin-bottom: 50px;
 
 		@include scr.tablet {
 			grid-template-columns: 1fr;

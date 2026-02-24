@@ -14,6 +14,7 @@
 	}
 
 	:global {
+		label + .input,
 		label + input {
 			margin-top: 10px;
 		}
