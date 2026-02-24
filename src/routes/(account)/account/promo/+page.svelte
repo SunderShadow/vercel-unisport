@@ -1,6 +1,6 @@
-<div>
+<div class="title">
 	<h1>Промокод</h1>
-	<div class="my-promo">Мой промокод</div>
+	<p>Мой промокод</p>
 </div>
 
 <div class="copy-promo">
@@ -41,10 +41,6 @@
 </div>
 
 <style lang="scss">
-	.my-promo {
-		margin-top: 10px;
-	}
-
 	.copy-promo {
 		display: flex;
 		gap: 20px;

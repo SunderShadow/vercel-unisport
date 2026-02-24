@@ -11,7 +11,7 @@
 		{ name: 'Промокод', href: '/promo' },
 		{ name: 'Аналитика', href: '/analyse' },
 		{ name: 'Расписание', href: '/timetable' },
-		{ name: 'Расписание', href: '/address' }
+		{ name: 'Мои адреса', href: '/address' },
 	]
 
 	for (let page of pages) {
