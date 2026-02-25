@@ -27,6 +27,8 @@
 	@use '$scss/mixins/scr';
 
 	main {
+		margin-top: var(--header-height);
+
 		:global {
 			button.button {
 				width: 100%;

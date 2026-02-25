@@ -17,9 +17,9 @@
 	<Header user={data.user} />
 </div>
 
-<main>
+<div class="page-wrapper">
 	{@render children()}
-</main>
+</div>
 
 <style lang="scss">
 	.header {
@@ -30,7 +30,7 @@
 		z-index: 2;
 	}
 
-	main {
+	.page-wrapper {
 		padding-top: var(--header-height);
 	}
 </style>

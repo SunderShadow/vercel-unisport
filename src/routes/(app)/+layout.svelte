@@ -18,9 +18,7 @@
 	<Header user={data.user} />
 </div>
 
-<main>
-	{@render children()}
-</main>
+{@render children()}
 
 <Footer />
 
@@ -31,9 +29,5 @@
 		top: 0;
 		left: 0;
 		z-index: 2;
-	}
-
-	main {
-		margin-top: var(--header-height);
 	}
 </style>

@@ -1,19 +1,4 @@
 // Стили относятся только к /account/**
-.box {
-	box-shadow:
-		0 4px 6px -4px #0000001a,
-		0 10px 15px -3px #0000001a,
-		0 -10px 15px -3px #0000001a;
-	border-radius: 14px;
-	padding: 20px;
-
-	h1 {
-		font-size: 1.5em;
-		font-weight: 600;
-		margin: 0;
-		color: var(--text-color);
-	}
-}
 
 p {
 	margin: 0;

@@ -103,3 +103,29 @@ h2 {
 	padding-left: 20px;
 	padding-right: 20px;
 }
+
+.box {
+	box-shadow:
+		0 4px 6px -4px #0000001a,
+		0 10px 15px -3px #0000001a,
+		0 -10px 15px -3px #0000001a;
+	border-radius: 14px;
+	padding: 20px;
+
+  background: #FFF;
+
+	h1 {
+		font-size: 1.5em;
+		font-weight: 600;
+		margin: 0;
+		color: var(--text-color);
+	}
+
+	> .block {
+    margin-bottom: 0;
+	}
+
+  > .block + .block {
+    margin-top: 20px;
+  }
+}
