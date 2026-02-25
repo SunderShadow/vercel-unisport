@@ -14,7 +14,7 @@
 		{badge}
 	</div>
 
-	<enhanced:img src={img} width="295" height="200" />
+	<enhanced:img src={img} alt="" width="295" height="200" />
 	<h1>{title}</h1>
 	<time>{date}</time>
 </article>

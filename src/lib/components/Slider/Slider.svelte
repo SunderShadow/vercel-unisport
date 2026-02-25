@@ -9,7 +9,7 @@
 
 	let { slides, options = {} }: Props = $props()
 
-	let defaultOptions: Options = {
+	const defaultOptions: Options = $derived({
 		type: 'loop',
 		arrows: false,
 		perPage: 4,
@@ -26,8 +26,8 @@
 				perPage: 1
 			}
 		},
-		...{ options }
-	}
+		...options
+	})
 </script>
 
 <Splide hasTrack={false} options={defaultOptions}>

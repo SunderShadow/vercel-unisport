@@ -10,7 +10,7 @@
 
 	let { user }: Props = $props()
 
-	const authorized = !!user
+	const authorized = $derived(!!user)
 
 	// Mobile only
 	let navVisible = $state(false)

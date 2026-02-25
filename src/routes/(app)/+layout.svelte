@@ -18,7 +18,9 @@
 	<Header user={data.user} />
 </div>
 
-{@render children()}
+<main>
+	{@render children()}
+</main>
 
 <Footer />
 
