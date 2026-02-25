@@ -1,13 +1,14 @@
 <script lang="ts">
 	import Button from '$lib/components/Button/Button.svelte'
 	import listTypeImg from './list-type.svg?no-inline'
+	import listTypeCheckImg from './list-type-check.svg?no-inline'
 
 	const items = [
-		{ active: false, title: 'Умные ИИ уведомлениях о мероприятиях' },
-		{ active: false, title: 'Расширенная аналитика' },
-		{ active: false, title: 'Офлайн—доступ к картам' },
-		{ active: false, title: 'Создание своих статей в блоге' },
-		{ active: false, title: 'Приоритетная клиентская поддержка' },
+		{ active: true, title: 'Умные ИИ уведомлениях о мероприятиях' },
+		{ active: true, title: 'Расширенная аналитика' },
+		{ active: true, title: 'Офлайн—доступ к картам' },
+		{ active: true, title: 'Создание своих статей в блоге' },
+		{ active: true, title: 'Приоритетная клиентская поддержка' },
 		{ active: false, title: 'Можно добавлять близких в свою подписку' }
 	]
 </script>
@@ -16,11 +17,16 @@
 	<p class="block subtitle">В базовой подписке нету таких функций!</p>
 	<h2 class="block">Премиум функции с подпиской</h2>
 
-	<ul class="block" style:--type-img={`url("${listTypeImg}")`}>
-		{#each items as item}
-			<li>{item.title}</li>
+	<ul
+		class="block"
+		style:--type-img={`url("${listTypeImg}")`}
+		style:--type-check-img={`url("${listTypeCheckImg}")`}>
+		{#each items as { active, title }}
+			<li class:check={active}>{title}</li>
 		{/each}
 	</ul>
+
+	<p class="block">Чтобы получить доступ ко всем премиум функциям — подключите подписку на год</p>
 
 	<div class="block btn">
 		<Button accent fullWidth>Подключить подписку</Button>
@@ -74,6 +80,10 @@
 
 			width: 3em;
 			height: 3em;
+		}
+
+		&.check::before {
+			background-image: var(--type-check-img);
 		}
 	}
 

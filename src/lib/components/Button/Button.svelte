@@ -5,16 +5,30 @@
 		children: Snippet
 		accent?: boolean
 		round?: boolean
-		rounded?: boolean,
-		disabled?: boolean,
-		fullWidth?: boolean,
-		bg?: 'default' | 'white',
+		rounded?: boolean
+		disabled?: boolean
+		fullWidth?: boolean
+		bg?: 'default' | 'white'
 	}
 
-	let { children, accent = false, round = false, rounded = false, disabled = false, fullWidth = false, bg = 'default'}: Props = $props()
+	let {
+		children,
+		accent = false,
+		round = false,
+		rounded = false,
+		disabled = false,
+		fullWidth = false,
+		bg = 'default'
+	}: Props = $props()
 </script>
 
-<button class:accent class:rounded class:round {disabled} class:full-width={fullWidth} class={`bg-${bg}`}>
+<button
+	class:accent
+	class:rounded
+	class:round
+	{disabled}
+	class:full-width={fullWidth}
+	class={`bg-${bg}`}>
 	{@render children()}
 </button>
 
@@ -43,7 +57,7 @@
 		font-weight: 500;
 
 		&:not([disabled]) {
-      cursor: pointer;
+			cursor: pointer;
 		}
 
 		box-shadow:
@@ -53,7 +67,7 @@
 		&.bg-white {
 			background: #fff;
 			color: var(--text-color);
-      border: 1px solid #E5E7EB;
+			border: 1px solid #e5e7eb;
 		}
 
 		&.rounded {

@@ -1,31 +1,27 @@
-<script>
-	import Promotion from '../Promotion.svelte'
+<script lang="ts">
 	import About from './About.svelte'
 	import Referal from './Referal.svelte'
 	import Functional from './Functional.svelte'
 	import Oferta from './Oferta.svelte'
+	import Disable from './Disable.svelte'
 </script>
 
 <main class="container">
-	<h1>Базовая подписка</h1>
-	<p>
-		Наша подписка открывает вам путь мире большого спорта и дает доступ к преимум функциям сервиса
-	</p>
+	<h1>Юниспорт премиум</h1>
+	<p>Подзравляем! Вы обладатель нашей премиум подписки</p>
 
 	<div class="boxes">
-		<Promotion />
 		<About />
 		<Referal />
 		<Functional />
 		<Oferta />
+		<Disable />
 	</div>
 </main>
 
 <style lang="scss">
 	main {
 		position: relative;
-		margin-top: 50px;
-		margin-bottom: 50px;
 	}
 
 	h1,

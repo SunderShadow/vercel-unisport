@@ -4,9 +4,9 @@
 
 <div class="box">
 	<h2 class="block">Оформлено 12 декабря 2025</h2>
-	<div class="block cost">0 ₽</div>
+	<div class="block cost">159 ₽</div>
 	<div class="block buttons">
-		<Button rounded disabled>Бессрочно</Button>
+		<Button rounded disabled>Спишется 12 января 2026</Button>
 		<Button rounded>
 			<svg
 				width="21"
