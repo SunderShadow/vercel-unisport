@@ -39,15 +39,15 @@
 			.section-group + .section-group,
 			section + section {
 				margin-top: 50px;
+
 				@include scr.tablet {
 					margin-top: 20px;
 				}
 			}
+      section:last-of-type {
+        margin-bottom: 50px;
+      }
 		}
-	}
-
-	section:last-of-type {
-		margin-bottom: 50px;
 	}
 
 	.section-group {
