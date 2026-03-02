@@ -44,24 +44,24 @@
 					margin-top: 20px;
 				}
 			}
-      section:last-of-type {
+			> section:last-of-type {
         margin-bottom: 50px;
       }
-		}
-	}
 
-	.section-group {
-		display: grid;
+      .section-group {
+        display: grid;
 
-		@include scr.higher_than_tablet {
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 1fr 2fr;
-			gap: 20px;
+        @include scr.higher_than_tablet {
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 2fr;
+          gap: 20px;
 
-			> section {
-				margin-top: 0;
-				margin-bottom: 0;
-			}
+          > section {
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+        }
+      }
 		}
 	}
 </style>
