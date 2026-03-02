@@ -139,8 +139,13 @@
 		display: flex;
 		gap: 30px;
 		margin-left: auto;
+		font-size: 14px;
 
-		@media (min-width: 1101px) {
+		@media (max-width: 1230px) {
+			font-size: 12px;
+		}
+
+		@media (min-width: 1231px) {
 			transform: translateX(20%);
 		}
 

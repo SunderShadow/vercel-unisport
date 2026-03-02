@@ -148,9 +148,8 @@
 
 		p {
 			text-align: right;
-			@include scr.mobile {
-				line-height: 28px;
-			}
+      line-height: 28px;
+      margin-top: 20px;
 		}
 	}
 
