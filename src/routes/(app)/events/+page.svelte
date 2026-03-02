@@ -65,7 +65,7 @@
 							img={img3}
 							title="Мастер-класс по глиномесенью"
 							date="27.12.2024"
-							href="/events/3"/>
+							href="/events/3" />
 					</SplideSlide>
 					<SplideSlide>
 						<FastArticle
@@ -73,7 +73,7 @@
 							img={img3}
 							title="Бесплатная тренировнка по Йоге"
 							date="27.12.2024"
-							href="/events/4"/>
+							href="/events/4" />
 					</SplideSlide>
 				{/each}
 			{/snippet}
@@ -89,7 +89,7 @@
 					img={img2}
 					title="Первый триатлон в Ростове-на-Дорну"
 					date="27.12.2024"
-					href="/events/1"/>
+					href="/events/1" />
 				<FastArticle
 					badge="Бесплатно"
 					img={img2}
@@ -101,13 +101,13 @@
 					img={img3}
 					title="Мастер-класс по глиномесенью"
 					date="27.12.2024"
-					href="/events/3"/>
+					href="/events/3" />
 				<FastArticle
 					badge="от 1500₽"
 					img={img3}
 					title="Бесплатная тренировнка по Йоге"
 					date="27.12.2024"
-					href="/events/4"/>
+					href="/events/4" />
 			{/each}
 		</div>
 	</section>

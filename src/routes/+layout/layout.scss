@@ -96,7 +96,7 @@ h2 {
 }
 
 .container {
-  width: 100%;
+	width: 100%;
 	max-width: 1440px;
 	margin-left: auto;
 	margin-right: auto;
@@ -106,7 +106,7 @@ h2 {
 }
 
 h2 {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 
 .box {
@@ -119,22 +119,22 @@ h2 {
 
 	background: #fff;
 
-  .subtitle {
-    font-size: 18px;
-  }
+	.subtitle {
+		font-size: 18px;
+	}
 
-  button {
-    font-size: 18px;
-    font-weight: 600 !important;
-  }
+	button {
+		font-size: 18px;
+		font-weight: 600 !important;
+	}
 
-  .block {
-    margin: 0;
-  }
+	.block {
+		margin: 0;
+	}
 
-  > .block + .block {
-    margin-top: 20px;
-  }
+	> .block + .block {
+		margin-top: 20px;
+	}
 
 	h1 {
 		font-size: 1.5em;
@@ -143,4 +143,3 @@ h2 {
 		color: var(--text-color);
 	}
 }
-

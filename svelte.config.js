@@ -11,13 +11,11 @@ const config = {
 		},
 		typescript: {
 			config: (cfg) => {
-				cfg.compilerOptions.paths['ymaps'] = [
-					"./node_modules/@yandex/ymaps3-types"
-				]
+				cfg.compilerOptions.paths['ymaps'] = ['./node_modules/@yandex/ymaps3-types']
 				return cfg
-			},
+			}
 		}
-	},
+	}
 }
 
 export default config

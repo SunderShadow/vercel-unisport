@@ -35,9 +35,9 @@ $laptop: 1024px;
 }
 
 @mixin higher_than_tablet {
-  @media (min-width: $tablet + 1px) {
-    @content;
-  }
+	@media (min-width: $tablet + 1px) {
+		@content;
+	}
 }
 
 @mixin tablet {
