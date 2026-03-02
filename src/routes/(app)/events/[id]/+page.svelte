@@ -3,6 +3,8 @@
 	import FastInfo from './FastInfo.svelte'
 	import galleryImg from "./assets/gallery.png?enhanced&format=webp"
 	import Button from '$lib/components/Button/Button.svelte'
+	import organizerEnhanced from "./assets/organizer.png?enhanced&format=webp"
+
 	import { onDestroy, onMount } from 'svelte'
 	import { initMapWithMarker, scriptHTML } from '$lib/map'
 	import type { YMap } from '@yandex/ymaps3-types'
@@ -97,13 +99,26 @@
 			<div id="map" class="block" bind:this={mapEl}></div>
 		</section>
 	</div>
+
+	<section id="organizer" class="container">
+		<h2>Организатор</h2>
+		<a href="">
+			<enhanced:img src={organizerEnhanced} width="53" height="53"/>
+			<span>Иван Иванов</span>
+			<span class="rating">4.5</span>
+		</a>
+	</section>
 </main>
 
 <style lang="scss">
+	@use "$scss/mixins/scr";
+
 	.box-group {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 2fr;
+    @include scr.higher_than_tablet {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 2fr;
+		}
 		gap: 20px;
   }
 
@@ -122,8 +137,10 @@
 	}
 
 	#gallery {
-		grid-column: 2;
-		grid-row: 1 / 3;
+		@include scr.higher_than_tablet {
+      grid-column: 2;
+      grid-row: 1 / 3;
+		}
 
 		.content {
 			width: 100%;
@@ -131,7 +148,13 @@
 			grid-template-columns: 1fr 1fr;
 			gap: 20px;
 
+			@include scr.mobile {
+				grid-template-columns: 1fr;
+			}
+
 			img {
+				width: 100%;
+				object-fit: cover;
 				border-radius: 14px;
 			}
 		}
@@ -140,6 +163,8 @@
 	#contacts {
     display: flex;
 		flex-direction: column;
+		gap: 20px;
+
 		.item + .item {
       margin-top: 15px;
 		}
@@ -168,9 +193,51 @@
 		}
 	}
 
+	#map_route {
+    margin-bottom: 50px;
+	}
+
 	#map {
 		width: 100%;
 		height: 600px;
 		border-radius: 14px;
+
+    @include scr.tablet {
+      height: 300px;
+    }
+	}
+
+	#organizer {
+    margin-top: 50px;
+    margin-bottom: 50px;
+		img {
+			border-radius: 10em;
+		}
+
+		:global button {
+			padding: 12px 50px;
+			gap: 15px;
+		}
+
+    a {
+			width: fit-content;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+			background-color: #FFFFFF;
+			padding: 12px 50px;
+			border-radius: 10em;
+
+      box-shadow: 0 4px 6px -4px #0000001A, 0 10px 15px -3px #0000001A, 0 -10px 15px -3px #0000001A;
+
+      span:last-child {
+        background: #01B306;
+        padding: 4.5px 10px;
+        border-radius: 10em;
+        color: #fff;
+        font-weight: 400;
+        font-size: 16px;
+			}
+    }
 	}
 </style>

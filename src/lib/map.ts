@@ -15,7 +15,7 @@ export async function initMapWithMarker(el: HTMLElement, searchParams: SearchPar
 
 	let location = {
 		center: [37.588144, 55.733842],
-		zoom: 14
+		zoom: 16
 	}
 
 	let markerCoordinates: LngLat = [37.588144, 55.733842]
