@@ -11,6 +11,9 @@ importers:
       '@splidejs/svelte-splide':
         specifier: ^0.2.9
         version: 0.2.9
+      '@yandex/ymaps3-types':
+        specifier: ^1.0.18856213
+        version: 1.0.18856213
       chart.js:
         specifier: ^4.5.1
         version: 4.5.1
@@ -703,6 +706,20 @@ packages:
 
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
+
+  '@yandex/ymaps3-types@1.0.18856213':
+    resolution: {integrity: sha512-jHbN7X0r79vLG1x0UkaedxM9eKQR1i7nBCVxGau2hhsyCEz4WWBJyBjcZqhzEH2tjmka6h0ovWH/SpcIAnWr4w==}
+    peerDependencies:
+      '@types/react': ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      '@types/react-dom': ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      '@vue/runtime-core': '3'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+      '@vue/runtime-core':
+        optional: true
 
   acorn@8.15.0:
     resolution: {integrity: sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==}
@@ -1614,6 +1631,8 @@ snapshots:
       undici-types: 6.21.0
 
   '@types/resolve@1.20.2': {}
+
+  '@yandex/ymaps3-types@1.0.18856213': {}
 
   acorn@8.15.0: {}
 

@@ -115,6 +115,27 @@ h2 {
 
 	background: #fff;
 
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 18px;
+    font-weight: 600 !important;
+  }
+
+  .block {
+    margin: 0;
+  }
+
+  > .block + .block {
+    margin-top: 20px;
+  }
+
 	h1 {
 		font-size: 1.5em;
 		font-weight: 600;
@@ -122,3 +143,4 @@ h2 {
 		color: var(--text-color);
 	}
 }
+
