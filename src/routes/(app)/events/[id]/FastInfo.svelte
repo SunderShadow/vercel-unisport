@@ -89,7 +89,7 @@
 
 	.mobile_info {
     display: none;
-		@include scr.mobile {
+		@include scr.tablet {
       display: flex;
 		}
 
@@ -144,10 +144,12 @@
 		@media (max-width: 1200px) {
       grid-template-columns: repeat(2, 1fr);
 		}
+    @include scr.tablet	{
+      gap: 15px;
+		}
 
 		@include scr.mobile	{
       grid-template-columns: 1fr;
-			gap: 15px;
 		}
 	}
 
@@ -162,6 +164,7 @@
 
 		.icon {
       display: flex;
+      flex-shrink: 0;
 
       background: linear-gradient(90deg, rgba(246, 109, 73, 0.3) 0%, rgba(244, 63, 94, 0.3) 100%);
 			width: 50px;
