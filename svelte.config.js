@@ -8,8 +8,16 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			'$scss/*': './src/lib/scss/*'
+		},
+		typescript: {
+			config: (cfg) => {
+				cfg.compilerOptions.paths['ymaps'] = [
+					"./node_modules/@yandex/ymaps3-types"
+				]
+				return cfg
+			},
 		}
-	}
+	},
 }
 
 export default config

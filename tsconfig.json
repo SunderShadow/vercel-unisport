@@ -13,12 +13,7 @@
 		"moduleResolution": "bundler",
         "typeRoots": [
           "./node_modules/@yandex/ymaps3-types"
-        ],
-        "paths": {
-          "ymaps3": [
-            "./node_modules/@yandex/ymaps3-types"
-          ]
-        }
+        ]
 	}
 	// Path aliases are handled by https://svelte.dev/docs/kit/configuration#alias
 	// except $lib which is handled by https://svelte.dev/docs/kit/configuration#files

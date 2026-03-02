@@ -3,8 +3,26 @@
 	import FastInfo from './FastInfo.svelte'
 	import galleryImg from "./assets/gallery.png?enhanced&format=webp"
 	import Button from '$lib/components/Button/Button.svelte'
+	import { onDestroy, onMount } from 'svelte'
+	import { initMapWithMarker, scriptHTML } from '$lib/map'
+	import type { YMap } from '@yandex/ymaps3-types'
 
+	let mapEl: HTMLElement = $state()
+	let map: YMap = null
+	onMount(async () => {
+		map = await initMapWithMarker(mapEl, {
+			text: 'Ростов-На-Дону, ул. Зорге, д. 33, 5 этаж'
+		})
+	})
+
+	onDestroy(() => {
+		map?.destroy()
+	})
 </script>
+
+<svelte:head>
+	{@html scriptHTML}
+</svelte:head>
 
 <Header />
 <main>
@@ -152,8 +170,7 @@
 
 	#map {
 		width: 100%;
-		height: 300px;
-		background: #6b6b6b;
+		height: 600px;
 		border-radius: 14px;
 	}
 </style>

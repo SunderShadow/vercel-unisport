@@ -1,5 +1,4 @@
 <script lang="ts">
-	import './layout.scss'
 	let { children } = $props()
 </script>
 

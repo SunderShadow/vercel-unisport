@@ -11,6 +11,9 @@ importers:
       '@splidejs/svelte-splide':
         specifier: ^0.2.9
         version: 0.2.9
+      '@yandex/ymaps3-default-ui-theme':
+        specifier: ^0.0.24
+        version: 0.0.24
       '@yandex/ymaps3-types':
         specifier: ^1.0.18856213
         version: 1.0.18856213
@@ -706,6 +709,9 @@ packages:
 
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
+
+  '@yandex/ymaps3-default-ui-theme@0.0.24':
+    resolution: {integrity: sha512-75ukFfADLE0XbVcgq661kF+bgfIlMfD30dqxrwFgL2nbNcZRQhxwq/YeqalbKZkEbd+/D6l7iKLgHzR8b4PQFA==}
 
   '@yandex/ymaps3-types@1.0.18856213':
     resolution: {integrity: sha512-jHbN7X0r79vLG1x0UkaedxM9eKQR1i7nBCVxGau2hhsyCEz4WWBJyBjcZqhzEH2tjmka6h0ovWH/SpcIAnWr4w==}
@@ -1631,6 +1637,8 @@ snapshots:
       undici-types: 6.21.0
 
   '@types/resolve@1.20.2': {}
+
+  '@yandex/ymaps3-default-ui-theme@0.0.24': {}
 
   '@yandex/ymaps3-types@1.0.18856213': {}
 
