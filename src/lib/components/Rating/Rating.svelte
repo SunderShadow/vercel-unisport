@@ -1,7 +1,5 @@
 <script lang="ts">
-	let {
-		value
-	} = $props()
+	let { value } = $props()
 </script>
 
 {#snippet star()}
@@ -22,20 +20,20 @@
 </div>
 
 <style lang="scss">
-  .rating {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    gap: 16px;
-    margin-top: 10px;
+	.rating {
+		display: flex;
+		align-items: center;
+		font-size: 14px;
+		gap: 16px;
+		margin-top: 10px;
 
-    span {
-      color: var(--text-color);
-    }
+		span {
+			color: var(--text-color);
+		}
 
-    .stars {
-      display: flex;
-      gap: 7px;
-    }
-  }
+		.stars {
+			display: flex;
+			gap: 7px;
+		}
+	}
 </style>
