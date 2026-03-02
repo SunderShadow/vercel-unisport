@@ -148,8 +148,8 @@
 
 		p {
 			text-align: right;
-      line-height: 28px;
-      margin-top: 20px;
+			line-height: 28px;
+			margin-top: 20px;
 		}
 	}
 

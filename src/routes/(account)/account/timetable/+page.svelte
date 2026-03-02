@@ -3,7 +3,7 @@
 	import GymIcon from '$lib/components/icons/Gym.svelte'
 	import Gymnastics from '$lib/components/icons/Gymnastics.svelte'
 	import Swim from '$lib/components/icons/Swim.svelte'
-	import Timetable from './Timetable.svelte'
+	import Timetable from '$lib/components/Timetable/Timetable.svelte'
 	import { DateTime } from '$lib/dateTime/date'
 
 	let currentDate = $state(new DateTime())

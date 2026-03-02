@@ -47,6 +47,9 @@ export class DateTime extends Date {
 			},
 			get shortName() {
 				return date.settings.shortWeekDaysNames[date.getDay()]
+			},
+			get isHoliday() {
+				return [6, 0].includes(date.getDay())
 			}
 		}
 	}

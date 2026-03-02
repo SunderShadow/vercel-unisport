@@ -4,9 +4,12 @@
 		title: string
 		date: string
 		badge: string
+		href?: string
 	}
 
-	let { badge, img, title, date }: Props = $props()
+	let { badge, img, title, date, href }: Props = $props()
+
+	href ??= ''
 </script>
 
 <article>
@@ -15,13 +18,15 @@
 	</div>
 
 	<enhanced:img src={img} alt="" width="295" height="200" />
-	<h1>{title}</h1>
+	<h1>
+		<a {href}>{title}</a>
+	</h1>
 	<time>{date}</time>
 </article>
 
 <style lang="scss">
 	article {
-		aspect-ratio: 335 / 365;
+		position: relative;
 		border-radius: 14px;
 		padding: 20px;
 		box-shadow:
@@ -63,5 +68,14 @@
 		letter-spacing: 1px;
 
 		color: #969fa8;
+	}
+
+	a::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
 	}
 </style>

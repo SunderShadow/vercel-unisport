@@ -64,9 +64,9 @@
 				.text-content {
 					max-width: 890px;
 					text-align: center;
-          margin: 20px auto;
+					margin: 20px auto;
 
-          color: var(--text-content-color);
+					color: var(--text-content-color);
 
 					@include scr.desktop {
 						font-size: 18px;

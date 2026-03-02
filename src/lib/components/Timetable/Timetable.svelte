@@ -1,12 +1,27 @@
 <script lang="ts">
 	import { DateTime } from '$lib/dateTime/date'
+	import { onMount } from 'svelte'
 
 	type Props = {
-		currentDate: DateTime
-		totalViewCount: number
+		currentDate?: DateTime
 	}
 
-	let { currentDate = $bindable(), totalViewCount }: Props = $props()
+	let { currentDate = $bindable() }: Props = $props()
+
+	let ready = $state(false)
+	let containerWidth = $state()
+	let totalViewCount = $derived.by(() => {
+		let canContain = Math.floor(containerWidth / 52)
+		if (isNaN(canContain)) {
+			canContain = 7
+		}
+
+		return canContain
+	})
+
+	onMount(() => {
+		ready = true
+	})
 
 	if (!currentDate) {
 		currentDate = new DateTime()
@@ -60,10 +75,13 @@
 	}
 </script>
 
-<div class="timetable">
+<div class="timetable" class:ready>
 	<div class="title">{currentDate.month.fullName} {currentDate.getFullYear()}</div>
 	<div class="data">
-		<div class="dates">
+		<div
+			class="dates"
+			bind:clientWidth={containerWidth}
+			style:grid-template-columns="repeat({totalViewCount}, 1fr)">
 			{#each settings.before as date}
 				<button
 					onclick={() => {
@@ -110,6 +128,10 @@
 
 <style lang="scss">
 	.timetable {
+		&:not(.ready) {
+			opacity: 0;
+		}
+
 		.title {
 			margin-bottom: 10px;
 			color: var(--text-color);
@@ -124,7 +146,7 @@
 
 		.dates {
 			display: grid;
-			grid-template-columns: repeat(11, 1fr);
+			flex-grow: 1;
 
 			> button {
 				width: 52px;
