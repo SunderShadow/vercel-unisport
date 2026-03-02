@@ -18,11 +18,13 @@
 		rounded = false,
 		disabled = false,
 		fullWidth = false,
-		bg = 'default'
+		bg = 'default',
+		...restProps
 	}: Props = $props()
 </script>
 
 <button
+	{...restProps}
 	class:accent
 	class:rounded
 	class:round

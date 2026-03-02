@@ -24,7 +24,7 @@
 		{@render button()}
 	</button>
 
-	<ul style:--type-img={`url(${listTypeImg})`}>
+	<ul style:--type-img={`url("${listTypeImg}")`}>
 		{#each advantages as li}
 			<li>{li}</li>
 		{/each}

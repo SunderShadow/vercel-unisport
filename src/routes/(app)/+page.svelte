@@ -28,6 +28,7 @@
 
 	main {
 		margin-top: var(--header-height);
+		margin-bottom: var(--header-height);
 
 		:global {
 			button.button {

@@ -3,6 +3,7 @@
 
 	import logo from '$lib/assets/img/logo.png?enhanced&format=webp'
 	import { goto } from '$app/navigation'
+	import CityChooseModal from './CityChooseModal.svelte'
 
 	type Props = {
 		user: null | Auth.UserData
@@ -14,6 +15,8 @@
 
 	// Mobile only
 	let navVisible = $state(false)
+
+	let cityChooseModalVisible = $state(false)
 
 	let nav = [
 		{ href: '#', text: 'О проекте' },
@@ -37,6 +40,8 @@
 	function login() {}
 </script>
 
+<CityChooseModal bind:visible={cityChooseModalVisible} />
+
 <header>
 	<button id="open-nav" class="default" aria-label="Открыть меню" onclick={toggleNav}>
 		<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +61,11 @@
 		{/each}
 	</nav>
 
-	<button id="city-choose">
+	<button
+		id="city-choose"
+		onclick={() => {
+			cityChooseModalVisible = true
+		}}>
 		<span>Ростов-на-Дону</span>
 
 		<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -155,7 +164,7 @@
 			transform: translateX(calc(-100% * var(--visible)));
 			transition-property: transform, box-shadow;
 			transition-duration: var(--transition-duration);
-			z-index: 10;
+			z-index: var(--header-z-index);
 
 			&.visible {
 				--visible: 0;
