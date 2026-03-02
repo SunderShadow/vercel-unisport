@@ -123,7 +123,6 @@
 		padding-right: 20px;
 
 		background: rgba(255, 255, 255, 0.6);
-		border: 1px solid #e5e7eb;
 		backdrop-filter: blur(8px);
 
 		font-size: 0.775em;
