@@ -5,10 +5,17 @@
 	import Button from '$lib/components/Button/Button.svelte'
 	import organizerEnhanced from "./assets/organizer.png?enhanced&format=webp"
 
+	import '@splidejs/svelte-splide/css'
+
 	import { onDestroy, onMount } from 'svelte'
 	import { initMapWithMarker, scriptHTML } from '$lib/map'
 	import type { YMap } from '@yandex/ymaps3-types'
 	import Review from '$lib/components/Review/Review.svelte'
+	import img2 from '../../+page/Section7/assets/img_2.png'
+	import img3 from '../../+page/Section7/assets/img_3.png'
+	import Slider from '$lib/components/Slider/Slider.svelte'
+	import { SplideSlide } from '@splidejs/svelte-splide'
+	import FastArticle from '$lib/components/FastArticle/FastArticle.svelte'
 
 	let mapEl: HTMLElement = $state()
 	let map: YMap = null
@@ -137,6 +144,45 @@
 		<Button bg="white">
 			Посмотреть еще
 		</Button>
+	</section>
+
+	<section class="container">
+		<h2>Смотерть похожие</h2>
+
+		<Slider>
+			{#snippet slides()}
+				{#each Array(3) as _}
+					<SplideSlide>
+						<FastArticle
+							badge="от 500₽"
+							img={img2}
+							title="Первый триатлон в Ростове-на-Дорну"
+							date="27.12.2024" />
+					</SplideSlide>
+					<SplideSlide>
+						<FastArticle
+							badge="Бесплатно"
+							img={img2}
+							title="Ростовский городской зимний забег"
+							date="27.12.2024" />
+					</SplideSlide>
+					<SplideSlide>
+						<FastArticle
+							badge="от 1500₽"
+							img={img3}
+							title="Мастер-класс по глиномесенью"
+							date="27.12.2024" />
+					</SplideSlide>
+					<SplideSlide>
+						<FastArticle
+							badge="от 1500₽"
+							img={img3}
+							title="Бесплатная тренировнка по Йоге"
+							date="27.12.2024" />
+					</SplideSlide>
+				{/each}
+			{/snippet}
+		</Slider>
 	</section>
 </main>
 
