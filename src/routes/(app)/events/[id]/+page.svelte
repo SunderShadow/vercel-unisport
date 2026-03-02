@@ -8,6 +8,7 @@
 	import { onDestroy, onMount } from 'svelte'
 	import { initMapWithMarker, scriptHTML } from '$lib/map'
 	import type { YMap } from '@yandex/ymaps3-types'
+	import Review from '$lib/components/Review/Review.svelte'
 
 	let mapEl: HTMLElement = $state()
 	let map: YMap = null
@@ -30,7 +31,7 @@
 <main>
 	<FastInfo />
 
-	<div class="container box-group">
+	<div class="container section-group">
 		<section id="about" class="box">
 			<h2 class="block">О мероприятии</h2>
 			<p class="block">
@@ -86,8 +87,8 @@
 		</section>
 	</div>
 
-	<div class="container">
-		<section id="map_route" class="box">
+	<section id="map_route" class="container">
+		<div class="box">
 			<h2 class="block">Как добратся</h2>
 			<p class="block">
 				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,8 +98,8 @@
 			</p>
 
 			<div id="map" class="block" bind:this={mapEl}></div>
-		</section>
-	</div>
+		</div>
+	</section>
 
 	<section id="organizer" class="container">
 		<h2>Организатор</h2>
@@ -108,17 +109,63 @@
 			<span class="rating">4.5</span>
 		</a>
 	</section>
+
+	<section id="reviews" class="container">
+		<h2>Отзывы и оценки</h2>
+		<div class="write_review">
+			<Button fullWidth>Написать отзыв</Button>
+		</div>
+		<Review thumb={organizerEnhanced.img.src} username="Иван Иванов" date={new Date()}
+						text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, at deserunt enim eum fuga
+						 itaque nostrum, optio perspiciatis quae reiciendis, sint ut vitae voluptate. Aperiam commodi
+						  consectetur consequuntur corporis cumque eaque enim, exercitationem ipsa, modi necessitatibus,
+						   quisquam temporibus ullam. Aliquid animi atque aut eius, error incidunt nihil saepe sed tempore."
+		/>
+		<Review thumb={organizerEnhanced.img.src} username="Иван Иванов" date={new Date()}
+						text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, at deserunt enim eum fuga
+						 itaque nostrum, optio perspiciatis quae reiciendis, sint ut vitae voluptate. Aperiam commodi
+						  consectetur consequuntur corporis cumque eaque enim, exercitationem ipsa, modi necessitatibus,
+						   quisquam temporibus ullam. Aliquid animi atque aut eius, error incidunt nihil saepe sed tempore."
+		/>
+		<Review thumb={organizerEnhanced.img.src} username="Иван Иванов" date={new Date()}
+						text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, at deserunt enim eum fuga
+						 itaque nostrum, optio perspiciatis quae reiciendis, sint ut vitae voluptate. Aperiam commodi
+						  consectetur consequuntur corporis cumque eaque enim, exercitationem ipsa, modi necessitatibus,
+						   quisquam temporibus ullam. Aliquid animi atque aut eius, error incidunt nihil saepe sed tempore."
+		/>
+
+		<Button bg="white">
+			Посмотреть еще
+		</Button>
+	</section>
 </main>
 
 <style lang="scss">
 	@use "$scss/mixins/scr";
 
-	.box-group {
+  .section-group + section,
+  .section-group + .section-group,
+	section + section {
+    margin-top: 50px;
+	}
+
+	section:last-of-type {
+    margin-bottom: 50px;
+	}
+
+	.section-group {
 		display: grid;
+
     @include scr.higher_than_tablet {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 2fr;
+
+			> section {
+        margin-top: 0;
+        margin-bottom: 0;
+			}
 		}
+
 		gap: 20px;
   }
 
@@ -193,10 +240,6 @@
 		}
 	}
 
-	#map_route {
-    margin-bottom: 50px;
-	}
-
 	#map {
 		width: 100%;
 		height: 600px;
@@ -208,8 +251,6 @@
 	}
 
 	#organizer {
-    margin-top: 50px;
-    margin-bottom: 50px;
 		img {
 			border-radius: 10em;
 		}
@@ -239,5 +280,12 @@
         font-size: 16px;
 			}
     }
+	}
+
+	.write_review {
+		max-width: 370px;
+		width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
 	}
 </style>
