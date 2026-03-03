@@ -30,6 +30,8 @@
   - [@svelte/enhanced-img](https://svelte.dev/docs/kit/images#sveltejs-enhanced-img) - Форматирование изображений
 - [Prettier](https://prettier.io/) - Форматирование кода
 - [Sass](https://sass-lang.com/guide/) - CSS препроцессор
+- [Chart.js](https://www.chartjs.org/) - Графики
+- [@yandex/ymaps3-types](https://www.npmjs.com/package/@yandex/ymaps3-types) - TS для Ymaps
 
 ## Перед тем как делать коммиты
 
