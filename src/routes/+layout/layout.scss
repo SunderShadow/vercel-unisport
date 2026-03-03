@@ -10,6 +10,7 @@
 :root {
 	font-family: 'Geist', sans-serif;
 	font-size: 16px;
+  color: var(--text-color);
 
 	@include scr.mobile {
 		font-size: 14px;
@@ -123,7 +124,7 @@ h2 {
 		font-size: 18px;
 	}
 
-	button {
+	button, .button {
 		font-size: 18px;
 		font-weight: 600 !important;
 	}

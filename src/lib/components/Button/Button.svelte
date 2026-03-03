@@ -7,7 +7,8 @@
 		round?: boolean
 		rounded?: boolean
 		disabled?: boolean
-		fullWidth?: boolean
+		fullWidth?: boolean,
+		href?: null|string,
 		bg?: 'default' | 'white'
 	}
 
@@ -18,26 +19,32 @@
 		rounded = false,
 		disabled = false,
 		fullWidth = false,
+		href = null,
 		bg = 'default',
 		...restProps
 	}: Props = $props()
+
+	let tag = href ? 'a' : 'button'
 </script>
 
-<button
+<svelte:element
+	this={tag}
 	{...restProps}
 	class:accent
 	class:rounded
 	class:round
 	{disabled}
+	{href}
+	class:button={!!href}
 	class:full-width={fullWidth}
 	class={`bg-${bg}`}>
 	{@render children()}
-</button>
+</svelte:element>
 
 <style lang="scss">
 	@use '$scss/mixins/bg';
 
-	button {
+	button, a {
 		display: flex;
 		align-items: center;
 		justify-content: center;
