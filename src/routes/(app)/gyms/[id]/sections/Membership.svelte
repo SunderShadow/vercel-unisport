@@ -38,7 +38,7 @@
 		return newCost.split('').reverse().join('')
 	}
 
-	let selected: number = $state(-1)
+	let selected: number = $state(2)
 	function select(id: number) {
 		selected = id
 	}
