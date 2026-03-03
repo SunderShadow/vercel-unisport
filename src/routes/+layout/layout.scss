@@ -11,10 +11,15 @@
 	font-family: 'Geist', sans-serif;
 	font-size: 16px;
   color: var(--text-color);
+  scroll-behavior: smooth;
 
 	@include scr.mobile {
 		font-size: 14px;
 	}
+}
+
+section {
+  scroll-margin-block-start: var(--header-height);
 }
 
 html,

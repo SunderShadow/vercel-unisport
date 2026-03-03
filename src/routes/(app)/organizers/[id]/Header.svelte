@@ -146,6 +146,11 @@
     margin-top: 0;
   }
 
+  h1:last-child,
+  p:last-child {
+    margin-bottom: 0;
+  }
+
 	.subtitle {
 		font-size: 1.1rem;
 
