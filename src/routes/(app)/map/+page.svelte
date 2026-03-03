@@ -18,11 +18,12 @@
 	import GallerySlider from '$lib/components/Slider/Gallery.svelte'
 	import YMapMarker from '$lib/YMaps/YMapMarker.svelte'
 
-
 	let filtersSectionEl = $state()
 	let filterHeight = $state(730)
 
 	let articleFound = $state(false)
+
+	let filtersVisible = $state(false)
 
 	onMount(async () => {
 		filterHeight = filtersSectionEl.clientHeight
@@ -76,6 +77,15 @@
 </YMap>
 
 <form id="search" action="">
+	<div class="open-filters" class:active={filtersVisible}>
+		<Button round bg="white" onclick={() => {filtersVisible = !filtersVisible}}>
+			<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M6.5 17.5V5.5M6.5 17.5L3.5 12.8846M6.5 17.5L9.5 12.8846" stroke="#272327" stroke-width="2" stroke-linecap="round"/>
+				<path d="M16.5 5.5V17.5M16.5 5.5L13.5 10.1154M16.5 5.5L19.5 10.1154" stroke="#272327" stroke-width="2" stroke-linecap="round"/>
+			</svg>
+		</Button>
+	</div>
+
 	<Input placeholder="Найти место тренировки" />
 	<Button round accent>
 		<svg
@@ -91,7 +101,7 @@
 	</Button>
 </form>
 
-<section id="filters" bind:this={filtersSectionEl}>
+<section id="filters" bind:this={filtersSectionEl} class:visible={filtersVisible}>
 	<h2>Фильтры</h2>
 	<form action="">
 		<div class="form_filters">
@@ -175,7 +185,7 @@
 </section>
 
 {#if articleFound}
-	<article id="info" style:--desktop-height={filterHeight + 'px'} transition:slide={{axis: 'x'}}>
+	<article id="info" style:--desktop-height={filterHeight + 'px'} transition:slide={{axis: 'y'}}>
 		<div class="presentation">
 			<div>
 				<p class="type">Фитнес-клуб</p>
@@ -250,6 +260,7 @@
 
 <style lang="scss">
 	@use "$scss/mixins/bg";
+	@use "$scss/mixins/scr";
 
 	.map {
     height: 100dvh;
@@ -267,6 +278,20 @@
 		width: 100%;
 
 		transform: translateX(-50%);
+    padding: 0 20px;
+
+		.open-filters.active {
+			:global {
+				button {
+					@include bg.accent;
+				}
+
+				svg {
+					*[fill] {fill: #fff}
+					*[stroke] {stroke: #fff}
+				}
+			}
+		}
 
     :global .input {
       flex-grow: 1;
@@ -288,6 +313,22 @@
 		background: #fff;
 		border-top-right-radius: 40px;
 		border-bottom-right-radius: 40px;
+
+		@include scr.tablet {
+			top: auto;
+			bottom: 0;
+			height: 75dvh;
+      overflow-y: auto;
+			transform: translateY(100%);
+			width: 100%;
+			border-radius: 40px 40px 0 0;
+
+			transition: transform var(--transition-duration);
+
+			&.visible {
+        transform: translateY(0);
+			}
+		}
 
 		h2 {
 			font-size: 2rem;
@@ -406,6 +447,23 @@
 
     max-width: 410px;
     width: 100%;
+
+    @include scr.tablet {
+      top: auto;
+      bottom: 0;
+      height: 75dvh;
+      overflow-y: auto;
+      transform: none;
+      width: 100%;
+			max-width: none;
+      border-radius: 40px 40px 0 0;
+
+      transition: transform var(--transition-duration);
+
+      &.visible {
+        transform: translateY(0);
+      }
+    }
 
 		.type {
 			color: var(--text-content-color);

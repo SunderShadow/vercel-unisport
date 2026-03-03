@@ -65,6 +65,9 @@
 
 		font-weight: 500;
 
+		transition-duration: var(--transition-duration);
+		transition-property: background-color;
+
 		&:not([disabled]) {
 			cursor: pointer;
 		}
