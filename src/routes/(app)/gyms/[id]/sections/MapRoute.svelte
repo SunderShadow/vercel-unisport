@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { initMapWithMarker, scriptHTML } from '$lib/map.js'
+	import { initMapWithMarker, scriptHTML } from '$lib/YMaps/map.js'
 	import type { YMap } from '@yandex/ymaps3-types'
 	import { onDestroy, onMount } from 'svelte'
 
