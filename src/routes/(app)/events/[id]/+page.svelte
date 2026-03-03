@@ -14,6 +14,7 @@
 </script>
 
 <Header />
+
 <main>
 	<FastInfoSection />
 

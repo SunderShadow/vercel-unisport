@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<link rel="preload" as="image" href={headerBG.img.src} />
+	<link rel="preload" as="image" href={headerBG.img.src} fetchpriority="high"/>
 </svelte:head>
 
 <header class:show_img={showImg} style:background-image={`url("${headerBG.img.src}")`}>
