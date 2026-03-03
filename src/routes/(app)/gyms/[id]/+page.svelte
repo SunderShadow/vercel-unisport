@@ -9,7 +9,6 @@
 	import ContactsSection from './sections/Contacts.svelte'
 	import MapRouteSection from './sections/MapRoute.svelte'
 	import ReviewsSection from './sections/Reviews.svelte'
-	import OrganizerSection from './sections/Organizer.svelte'
 	import SimilarSection from './sections/Similar.svelte'
 	import OpportunitiesSection from './sections/Opportunities.svelte'
 	import MembershipSection from './sections/Membership.svelte'
@@ -42,7 +41,6 @@
 	<MapRouteSection />
 
 	<ReviewsSection />
-	<OrganizerSection />
 	<SimilarSection />
 </main>
 

@@ -45,7 +45,7 @@
 		}
 	}
 
-	let rowsCount = Math.ceil(lessons.length / 2)
+	const rowsCount = Math.ceil(lessons.length / 2)
 
 	let selected = $state(0)
 </script>
@@ -62,7 +62,7 @@
 			{/each}
 		</div>
 
-		<div class="block lessons" style:grid-template-rows="repeat({rowsCount}, 1fr)">
+		<div class="block lessons" style:--rows={rowsCount}>
 			{#each lessons as lesson}
 				<Lesson {...lesson}/>
 			{/each}
@@ -71,7 +71,11 @@
 </section>
 
 <style lang="scss">
+	@use "$scss/mixins/scr";
+
 	.days {
+		width: 100%;
+		overflow: auto;
     display: grid;
 		grid-template-columns: repeat(7, 1fr);
 		gap: 5px;
@@ -98,8 +102,13 @@
 
 	.lessons {
     display: grid;
-		grid-auto-flow: column;
-		grid-template-columns: 1fr 1fr;
-		gap: 20px;
+    gap: 20px;
+
+		@media (min-width: 1100px) {
+      grid-auto-flow: column;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(var(--rows), 1fr);
+		}
+
 	}
 </style>
