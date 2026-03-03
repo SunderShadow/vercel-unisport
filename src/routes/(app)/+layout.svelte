@@ -5,8 +5,22 @@
 	import favicon from '$lib/assets/favicon.svg'
 	import Header from '../+layout/Header.svelte'
 	import Footer from '../+layout/Footer.svelte'
+	import { page } from "$app/state"
 
 	let { children, data } = $props()
+
+	const hideFooterOn = [
+		'/map'
+	]
+
+	let footerVisible = true
+
+	for (let i = 0; i < hideFooterOn.length; i++) {
+		if (page.url.pathname.startsWith(hideFooterOn[i])) {
+			footerVisible = false
+			break
+		}
+	}
 </script>
 
 <svelte:head>
@@ -20,7 +34,9 @@
 
 {@render children()}
 
-<Footer />
+{#if footerVisible}
+	<Footer />
+{/if}
 
 <style lang="scss">
 	.header {

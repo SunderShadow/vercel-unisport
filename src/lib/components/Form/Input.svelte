@@ -8,11 +8,13 @@
 	}
 
 	let { pre, post, ...restProps }: Props = $props()
+
+	let inputEl = $state()
 </script>
 
-<div class="input">
+<div class="input" onclick={() => {inputEl.focus()}}>
 	{@render pre?.()}
-	<input {...restProps} />
+	<input {...restProps} bind:this={inputEl}/>
 	{@render post?.()}
 </div>
 
@@ -24,6 +26,10 @@
 		width: 100%;
 	}
 
+	.input {
+    cursor: text;
+	}
+
 	div {
 		display: flex;
 		align-items: center;
@@ -31,5 +37,6 @@
 		gap: 20px;
 		border-radius: 14px;
 		border: 1px solid #d8dadc;
+		background: #fff;
 	}
 </style>

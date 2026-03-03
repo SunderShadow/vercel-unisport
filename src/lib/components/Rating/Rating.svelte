@@ -25,7 +25,6 @@
 		align-items: center;
 		font-size: 14px;
 		gap: 16px;
-		margin-top: 10px;
 
 		span {
 			color: var(--text-color);

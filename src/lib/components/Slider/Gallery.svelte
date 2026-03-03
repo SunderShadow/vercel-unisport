@@ -30,7 +30,7 @@
 	})
 </script>
 
-<div class="splide-wrapper">
+<div class="splide-gallery-wrapper">
 	<Splide hasTrack={false} options={defaultOptions}>
 		<SplideTrack>
 			{@render slides()}
@@ -39,7 +39,7 @@
 </div>
 
 <style lang="scss">
-	.splide-wrapper {
+	.splide-gallery-wrapper {
     display: contents;
 
     :global {
@@ -52,12 +52,17 @@
         padding-bottom: 20px;
       }
 
+			.splide__pagination {
+				bottom: 50px;
+			}
       .splide__pagination__page {
-        background: #d1d5db;
+        background: none;
+				border: 1px solid #FFFFFF;
       }
 
       .splide__pagination__page.is-active {
-        background: linear-gradient(90deg, #f66d49 0%, #f43f5e 100%);
+        background: #FFFFFF;
+        opacity: 1;
       }
     }
 	}
