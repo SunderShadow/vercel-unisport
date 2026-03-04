@@ -1,20 +1,6 @@
 <script lang="ts">
-	import { initMapWithMarker, scriptHTML } from '$lib/YMaps/map.js'
-	import type { YMap } from '@yandex/ymaps3-types'
-	import { onDestroy, onMount } from 'svelte'
-
-	let mapEl: HTMLElement = $state()
-	let map: YMap = null
-
-	onMount(async () => {
-		map = await initMapWithMarker(mapEl, {
-			text: 'Ростов-На-Дону, ул. Зорге, д. 33, 5 этаж'
-		})
-	})
-
-	onDestroy(() => {
-		map?.destroy()
-	})
+	import { scriptHTML } from '$lib/YMaps/Ymap.svelte'
+	import YMap from '$lib/YMaps/Ymap.svelte'
 </script>
 
 <svelte:head>
@@ -40,7 +26,17 @@
 			<span>ул. Зорге, д. 33, 5 этаж</span>
 		</p>
 
-		<div id="map" class="block" bind:this={mapEl}></div>
+		<div id="map" class="block">
+			<YMap
+				--height="inherit"
+				options={{
+				location: {
+					center: [37.588144, 55.733842],
+					zoom: 16
+				}
+			}}>
+			</YMap>
+		</div>
 	</div>
 </section>
 

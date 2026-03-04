@@ -1,9 +1,9 @@
 <script lang="ts">
 	import '@splidejs/svelte-splide/css'
 
-	import {slide} from 'svelte/transition'
+	import {fade} from 'svelte/transition'
 
-	import { scriptHTML } from '$lib/YMaps/map'
+	import { scriptHTML } from '$lib/YMaps/Ymap.svelte'
 
 	import { onMount } from "svelte"
 	import YMap from '$lib/YMaps/Ymap.svelte'
@@ -42,7 +42,7 @@
 	}
 }}>
 	<YMapMarker coordinates={[37.588144, 55.733842]}>
-		<div class="marker" onclick={() => {articleFound = true}}>
+		<div class="marker" onclick={() => {articleFound = !articleFound}}>
 			<svg width="70" height="50" viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<rect width="70" height="50" rx="25" fill="url(#paint0_linear_1724_6778)"/>
 				<g clip-path="url(#clip0_1724_6778)">
@@ -64,7 +64,7 @@
 	</YMapMarker>
 
 	<YMapMarker coordinates={[37.588241, 55.734841]}>
-		<div class="marker" onclick={() => {articleFound = true}}>
+		<div class="marker" onclick={() => {articleFound = !articleFound}}>
 			<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<circle cx="25" cy="25" r="25" fill="white"/>
 				<path d="M33.7525 20.005C35.1346 20.005 36.255 18.8846 36.255 17.5025C36.255 16.1204 35.1346 15 33.7525 15C32.3704 15 31.25 16.1204 31.25 17.5025C31.25 18.8846 32.3704 20.005 33.7525 20.005Z" fill="#272327"/>
@@ -179,13 +179,13 @@
 		<Button accent fullWidth>
 			<MagnifierIcon />
 
-			Узнать подробнее
+			<span>Найти</span>
 		</Button>
 	</form>
 </section>
 
 {#if articleFound}
-	<article id="info" style:--desktop-height={filterHeight + 'px'} transition:slide={{axis: 'y'}}>
+	<article id="info" style:--desktop-height={filterHeight + 'px'} transition:fade={{duration: 300}}>
 		<div class="presentation">
 			<div>
 				<p class="type">Фитнес-клуб</p>
@@ -253,7 +253,7 @@
 		<Button accent fullWidth>
 			<MagnifierIcon />
 
-			Узнать подробнее
+			<span>Узнать подробнее</span>
 		</Button>
 	</article>
 {/if}
@@ -304,15 +304,23 @@
   }
 
 	#filters {
+		--hidden: 1;
+
 		position: fixed;
 		top: max(50%, calc(var(--header-height) + 20px));
 		left: 0;
 		padding: 50px 20px;
-		transform: translateY(-50%);
+		transform: translateY(-50%) translateX(calc(-100% * var(--hidden)));
 
 		background: #fff;
 		border-top-right-radius: 40px;
 		border-bottom-right-radius: 40px;
+
+    transition: transform var(--transition-duration);
+
+		&.visible {
+      --hidden: 0;
+		}
 
 		@include scr.tablet {
 			top: auto;
@@ -322,8 +330,6 @@
 			transform: translateY(100%);
 			width: 100%;
 			border-radius: 40px 40px 0 0;
-
-			transition: transform var(--transition-duration);
 
 			&.visible {
         transform: translateY(0);
@@ -565,6 +571,10 @@
 
 		&:hover {
       --name-visible: 1;
+		}
+
+		@include scr.tablet {
+			--name-visible: 1;
 		}
 
 		span {

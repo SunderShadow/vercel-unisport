@@ -1,20 +1,36 @@
 <script lang="ts" module>
 	import type { YMap, YMapProps } from '@yandex/ymaps3-types'
 	import type { Snippet } from 'svelte'
+	import { PUBLIC_YMAPS_KEY } from '$env/static/public'
+
+	export const scriptHTML = `<script src="https://api-maps.yandex.ru/v3/?apikey=${PUBLIC_YMAPS_KEY}&lang=ru_RU">` + '</' + 'script' + '>'
 
 	export type Props = {
+		map?: YMap,
 		options: YMapProps,
 		children?: Snippet
 	}
-
-	export let map: YMap
 </script>
 
 <script lang="ts">
-	import {onMount, setContext} from 'svelte'
+	import { onDestroy, onMount, setContext } from 'svelte'
 	import {browser} from '$app/environment'
 
 	let el: HTMLElement = $state()!
+
+	let {
+		map = $bindable(null),
+		options,
+		children
+	}: Props = $props()
+
+	let mapContext = $state({
+		map
+	})
+
+	let ready = $state(false)
+
+	setContext('y-map-el', mapContext)
 
 	async function initMap() {
 		await ymaps3.ready
@@ -25,27 +41,19 @@
 		])
 	}
 
-	let mapContext = $state({
-		map
-	})
-
-	setContext('y-map-el', mapContext)
-
 	onMount(async () => {
 		mapContext.map = await initMap()
-		mapInitialized = true
+		ready = true
 	})
 
-	let mapInitialized = $state(false)
-	let {
-		options,
-		children
-	}: Props = $props()
+	onDestroy(() => {
+		map?.destroy()
+	})
 </script>
 
 {#if browser}
 	<div bind:this={el}>
-		{#if mapInitialized}
+		{#if ready}
 			{@render children?.()}
 		{/if}
 	</div>
