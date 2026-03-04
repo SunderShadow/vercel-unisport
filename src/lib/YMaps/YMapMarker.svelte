@@ -8,7 +8,7 @@
 </script>
 
 <script lang="ts">
-	import { getContext, onMount } from 'svelte'
+	import { getContext, onDestroy, onMount } from 'svelte'
 	import { type YMap } from '@yandex/ymaps3-types'
 
 	const context: {
@@ -28,6 +28,10 @@
 	onMount(() => {
 		el.remove()
 		map.addChild(new ymaps3.YMapMarker({coordinates}, el))
+	})
+
+	onDestroy(() => {
+		el.remove()
 	})
 </script>
 
