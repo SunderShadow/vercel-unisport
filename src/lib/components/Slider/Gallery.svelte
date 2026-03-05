@@ -12,20 +12,9 @@
 	const defaultOptions: Options = $derived({
 		type: 'loop',
 		arrows: false,
-		perPage: 4,
+		perPage: 1,
 		gap: 20,
 		padding: 10,
-		breakpoints: {
-			1024: {
-				perPage: 3
-			},
-			768: {
-				perPage: 2
-			},
-			425: {
-				perPage: 1
-			}
-		},
 		...options
 	})
 </script>
@@ -43,18 +32,14 @@
 		display: contents;
 
 		:global {
-			.splide {
-				padding-bottom: 21px;
-			}
-
 			.splide__track {
-				padding-top: 20px;
-				padding-bottom: 20px;
+				height: 100%;
 			}
 
 			.splide__pagination {
-				bottom: 50px;
+				bottom: 10px;
 			}
+
 			.splide__pagination__page {
 				background: none;
 				border: 1px solid #ffffff;

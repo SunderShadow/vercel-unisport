@@ -11,14 +11,15 @@
 
 	const hideFooterOn = ['/map']
 
-	let footerVisible = $state(true)
-
-	for (let i = 0; i < hideFooterOn.length; i++) {
-		if (page.url.pathname.startsWith(hideFooterOn[i])) {
-			footerVisible = false
-			break
+	let footerVisible = $derived.by(() => {
+		for (let i = 0; i < hideFooterOn.length; i++) {
+			if (page.url.pathname.startsWith(hideFooterOn[i])) {
+				return false
+			}
 		}
-	}
+
+		return true
+	})
 </script>
 
 <svelte:head>
