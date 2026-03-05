@@ -1,4 +1,6 @@
 <script lang="ts">
+	import {page} from "$app/state"
+
 	import Button from '$lib/components/Button/Button.svelte'
 	import mapEnhanced from './assets/map.png?enhanced&format=webp'
 
@@ -43,43 +45,45 @@
 		<article class="category">
 			<enhanced:img src={fitnessEnhanced} />
 			<div>
-				<h2><a href="" class="title">Фитнес</a></h2>
+				<h2><a href={page.url.pathname + '/category/fitness'} class="title">Фитнес</a></h2>
 			</div>
 		</article>
 		<article class="category">
 			<enhanced:img src={swimmingEnhanced} />
 			<div>
-				<h2><a href="" class="title">Плавание</a></h2>
+				<h2><a href={page.url.pathname + '/category/swimming'} class="title">Плавание</a></h2>
 			</div>
 		</article>
 		<article class="category">
 			<enhanced:img src={danceEnhanced} />
 			<div>
-				<h2><a href="" class="title">Танцы</a></h2>
+				<h2><a href={page.url.pathname + '/category/dance'} class="title">Танцы</a></h2>
 			</div>
 		</article>
 		<article class="category">
 			<enhanced:img src={yogaEnhanced} />
 			<div>
-				<h2><a href="" class="title">Йога</a></h2>
+				<h2><a href={page.url.pathname + '/category/yoga'} class="title">Йога</a></h2>
 			</div>
 		</article>
 		<article class="category">
 			<enhanced:img src={pilatesEnhanced} />
 			<div>
-				<h2><a href="" class="title">Пилатес</a></h2>
+				<h2><a href={page.url.pathname + '/category/pilates'} class="title">Пилатес</a></h2>
 			</div>
 		</article>
 		<article class="category">
 			<enhanced:img src={cyclingEnhanced} />
 			<div>
-				<h2><a href="" class="title">Сайклинг</a></h2>
+				<h2><a href={page.url.pathname + '/category/cycling'} class="title">Сайклинг</a></h2>
 			</div>
 		</article>
 	</div>
 </main>
 
 <style lang="scss">
+	@use "$scss/mixins/scr";
+
 	main {
 		padding-top: var(--header-height);
 	}
@@ -93,14 +97,30 @@
 		padding: 20px;
 		margin: 50px auto;
 
+
+    @include scr.mobile {
+      padding: 0;
+      margin: 0;
+    }
+
 		> div {
 			padding: 52px;
+
+      @include scr.tablet {
+        padding: 20px;
+      }
+
 			border-radius: 14px;
 
 			background-image: var(--bg-img);
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: cover;
+
+      @include scr.mobile {
+				background: none;
+        padding: 0;
+      }
 		}
 
 		:global .button {
@@ -110,6 +130,26 @@
 		}
 	}
 
+  #categories {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 25px;
+
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+		@include scr.higher_than_tablet {
+      height: 750px;
+		}
+
+		@include scr.mobile {
+			gap: 10px;
+			grid-template-rows: auto;
+    }
+  }
+
   .category {
 		position: relative;
 		--padding: 20px;
@@ -117,6 +157,16 @@
     padding: var(--padding);
     grid-column: span 2;
     grid-row: span 2;
+
+		@include scr.tablet {
+      grid-column: span 3;
+      height: 150px;
+		}
+
+		@include scr.mobile {
+      grid-column: span 6;
+      grid-row: auto;
+		}
 
 		border-radius: 14px;
 		overflow: hidden;
@@ -178,39 +228,29 @@
 			width: 100%;
     }
 
-    &:nth-child(1),
-    &:nth-child(4) {
-      grid-row: span 4;
-      background-size: auto 100%;
+    @include scr.higher_than_tablet {
+      &:nth-child(1),
+      &:nth-child(4) {
+        grid-row: span 4;
+        background-size: auto 100%;
 
-      &:hover {background-size: auto 110%}
-    }
+        &:hover {background-size: auto 110%}
+      }
 
-    &:nth-child(2),
-    &:nth-child(6) {
-      grid-row: span 2;
-      background-size: 100% 100%;
+      &:nth-child(2),
+      &:nth-child(6) {
+        grid-row: span 2;
+        background-size: 100% 100%;
 
-      &:hover {background-size: 110% 110%}
-    }
+        &:hover {background-size: 110% 110%}
+      }
 
-    &:nth-child(3),
-    &:nth-child(5) {
-			grid-row: span 3;
-      background-size: 130%;
-      &:hover {background-size: 140%}
+      &:nth-child(3),
+      &:nth-child(5) {
+        grid-row: span 3;
+        background-size: 130%;
+        &:hover {background-size: 140%}
+      }
 		}
   }
-
-	#categories {
-		display: grid;
-		grid-template-columns: repeat(6, 1fr);
-		grid-template-rows: repeat(6, 1fr);
-		gap: 25px;
-
-		height: 750px;
-
-		margin-top: 50px;
-		margin-bottom: 50px;
-	}
 </style>
