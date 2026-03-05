@@ -2,7 +2,7 @@
 	import type { Auth } from '$lib/types'
 
 	import logo from '$lib/assets/img/logo.png?enhanced&format=webp'
-	import { goto } from '$app/navigation'
+	import { goto, onNavigate } from '$app/navigation'
 	import CityChooseModal from './CityChooseModal.svelte'
 	import Link from './Link.svelte'
 	import type { Link as _Link } from './Link.svelte'
@@ -33,6 +33,10 @@
 		{ href: '#', text: 'Стать партнером' }
 	]
 
+	onNavigate(() => {
+		navVisible = false
+	})
+
 	function toggleNav() {
 		navVisible = !navVisible
 	}
@@ -49,7 +53,6 @@
 </script>
 
 <CityChooseModal bind:visible={cityChooseModalVisible} />
-
 <header>
 	<button id="open-nav" class="default" aria-label="Открыть меню" onclick={toggleNav}>
 		<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -160,7 +163,6 @@
 			--shadow-opacity: calc(0.25 * (1 - var(--visible)));
 
 			flex-direction: column;
-			gap: 10px;
 
 			position: fixed;
 			top: var(--header-height);
@@ -168,7 +170,7 @@
 			bottom: 0;
 			left: 0;
 			width: 100%;
-			max-width: 70vw;
+			max-width: 50vw;
 
 			box-shadow: 0 100vw 0 100vw rgba(#000, var(--shadow-opacity));
 			background: #fff;

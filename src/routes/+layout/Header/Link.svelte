@@ -15,7 +15,7 @@
 
 {#if children}
 	<div class="link-tree">
-		<div class="tree-name">
+		<button class="tree-name">
 			<span>{text}</span>
 			<svg viewBox="0 0 360 360" xml:space="preserve">
 				<g id="SVGRepo_iconCarrier">
@@ -25,7 +25,7 @@
 					></path>
 				</g>
 			</svg>
-		</div>
+		</button>
 		<div class="children">
 			<div class="children-wrapper">
 				{#each children as child}
@@ -40,6 +40,7 @@
 
 <style lang="scss">
 	@use '$scss/mixins/bg';
+	@use '$scss/mixins/scr';
 
 	.link-tree {
 		position: relative;
@@ -85,10 +86,30 @@
     }
 	}
 
+  .tree-name {
+		background: none;
+		border: none;
+		width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    svg {
+      width: 12px;
+      height: 12px;
+      fill: #000000;
+
+      transition: transform var(--transition-duration);
+    }
+  }
+
 	.tree-name, a {
 		position: relative;
 		padding: 10px 30px;
-		text-align: center;
+
+		@include scr.higher_than_tablet {
+      text-align: center;
+		}
 
     transition: color var(--transition-duration);
 
@@ -104,7 +125,11 @@
 
       opacity: .75;
 			@include bg.accent;
-			transform: translateY(-100%);
+			transform: translateY(-101%);
+
+			@include scr.tablet {
+        transform: translateX(-101%);
+			}
 
 			transition-property: transform, opacity;
 			transition-duration: var(--transition-duration);
@@ -113,8 +138,13 @@
 	}
 
   .children :global {
+		a::before {
+      @include scr.tablet {
+        transform: translateY(-101%);
+      }
+		}
     a:has(+ a:hover)::before {
-    	transform: translateY(100%);
+    	transform: translateY(101%);
     }
 
     a:hover + a + a {
@@ -122,7 +152,7 @@
 		}
 
     a:has(+ a + a:hover)::before {
-      transform: translateY(100%);
+      transform: translateY(101%);
 			transition: none;
     }
   }
@@ -131,39 +161,42 @@
 		border-radius: 14px 14px 0 0;
 		position: relative;
 		cursor: default;
-		height: 100%;
 
-		&:hover {
-			svg {
-				transform: rotate(180deg);
+		@include scr.tablet {
+      svg {
+        transform: rotate(270deg);
+      }
+		}
+
+    @include scr.higher_than_tablet {
+      &:hover {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+
+			:global a {
+				padding-left: 0;
+				padding-right: 0;
 			}
 		}
-
-		:global a {
-			padding-left: 0;
-			padding-right: 0;
-		}
+	}
+	@include scr.higher_than_tablet {
+    .link-tree:hover {
+      > .children {
+        --visible: 1;
+        visibility: visible;
+      }
+    }
 	}
 
-	.tree-name {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-
-		svg {
-			width: 12px;
-			height: 12px;
-			fill: #000000;
-
-			transition: transform var(--transition-duration);
-		}
-	}
-
-	.link-tree:hover {
-		> .children {
-			--visible: 1;
-			visibility: visible;
-		}
+	@include scr.tablet {
+    .link-tree:not(:has(.children:hover)):hover {
+      > .children {
+        --visible: 1;
+        visibility: visible;
+      }
+    }
 	}
 
 	.children {
@@ -174,6 +207,12 @@
 		top: 100%;
 		left: 50%;
 		transform: translateX(-50%) translateY(calc(-10px * (1 - var(--visible))));
+
+    @include scr.tablet {
+      left: 100%;
+			top: 0;
+      transform: none;
+    }
 
 		visibility: hidden;
 		opacity: var(--visible);

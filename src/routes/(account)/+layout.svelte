@@ -3,7 +3,7 @@
 	import 'normalize.css'
 
 	import favicon from '$lib/assets/favicon.svg'
-	import Header from '../+layout/Header.svelte'
+	import Header from '../+layout/Header/Header.svelte'
 
 	let { children, data } = $props()
 </script>

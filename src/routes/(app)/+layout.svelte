@@ -3,7 +3,7 @@
 	import 'normalize.css'
 
 	import favicon from '$lib/assets/favicon.svg'
-	import Header from '../+layout/Header.svelte'
+	import Header from '../+layout/Header/Header.svelte'
 	import Footer from '../+layout/Footer.svelte'
 	import { page } from '$app/state'
 
