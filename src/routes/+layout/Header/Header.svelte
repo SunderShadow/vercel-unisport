@@ -29,7 +29,7 @@
 			]
 		},
 		{ href: '/map', text: 'Карта' },
-		{ href: '#', text: 'О нас' },
+		{ href: '/about', text: 'О нас' },
 		{ href: '#', text: 'Стать партнером' }
 	]
 
