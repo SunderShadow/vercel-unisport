@@ -43,11 +43,35 @@
 		position: relative;
 	}
 
-	.tree-name,
-	a {
+  .link-tree:hover {
+		> .tree-name {
+      color: #fff;
+
+      svg {fill: #fff}
+
+      &::before {
+        transform: scale(1);
+      }
+		}
+	}
+
+	a:hover {
+    color: #fff;
+    svg {fill: #fff};
+
+    &::before {
+      transform: scale(1);
+    }
+	}
+
+	.tree-name, a {
 		position: relative;
 		padding: 10px 30px;
 		text-align: center;
+
+    transition: color var(--transition-duration);
+
+		overflow: hidden;
 
 		&::before {
 			content: '';
@@ -58,24 +82,18 @@
 			right: 0;
 
 			@include bg.accent;
-			transform: scale(0);
+			transform: translateY(-100%);
 
 			transition: transform var(--transition-duration);
 			z-index: -1;
 		}
-
-		&:hover::before {
-			transform: scale(1);
-		}
 	}
 
-	.tree-name {
-		border-radius: 14px 14px 0 0;
-
-		&::before {
-			border-radius: 14px 14px 0 0;
-		}
-	}
+  .children :global {
+    a:has(+ a:hover)::before {
+    	transform: translateY(100%);
+    }
+  }
 
 	.link-tree {
 		border-radius: 14px 14px 0 0;
@@ -137,7 +155,8 @@
 		transition-property: opacity, visibility, transform;
 		transform-origin: top;
 
-		background: #e8e8e8;
+    background: rgba(255, 255, 255, .85);
+    backdrop-filter: blur(64px);
 	}
 
 	.children-wrapper {
