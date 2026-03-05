@@ -3,7 +3,7 @@
 	import type { Snippet } from 'svelte'
 	import { PUBLIC_YMAPS_KEY } from '$env/static/public'
 
-	export const scriptHTML = `<script src="https://api-maps.yandex.ru/v3/?apikey=${PUBLIC_YMAPS_KEY}&lang=ru_RU">` + '</' + 'script' + '>'
+	export const scriptURL = `https://api-maps.yandex.ru/v3/?apikey=${PUBLIC_YMAPS_KEY}&lang=ru_RU`
 
 	export type Props = {
 		map?: YMap,

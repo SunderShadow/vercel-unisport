@@ -1,10 +1,12 @@
 <script lang="ts">
-	import { scriptHTML } from '$lib/YMaps/Ymap.svelte'
+	import { scriptURL } from '$lib/YMaps/Ymap.svelte'
 	import YMap from '$lib/YMaps/Ymap.svelte'
+
+	let mapLoaded = $state(false)
 </script>
 
 <svelte:head>
-	{@html scriptHTML}
+	<script src={scriptURL} onload={() => {mapLoaded = true}}></script>
 </svelte:head>
 
 <section id="map_route" class="container">
@@ -27,15 +29,17 @@
 		</p>
 
 		<div id="map" class="block">
-			<YMap
-				--height="inherit"
-				options={{
-				location: {
-					center: [37.588144, 55.733842],
-					zoom: 16
-				}
-			}}>
-			</YMap>
+			{#if mapLoaded}
+				<YMap
+					--height="inherit"
+					options={{
+					location: {
+						center: [37.588144, 55.733842],
+						zoom: 16
+					}
+				}}>
+				</YMap>
+			{/if}
 		</div>
 	</div>
 </section>
