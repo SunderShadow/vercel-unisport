@@ -4,6 +4,8 @@
 	import logo from '$lib/assets/img/logo.png?enhanced&format=webp'
 	import { goto } from '$app/navigation'
 	import CityChooseModal from './CityChooseModal.svelte'
+	import Link from './Link.svelte'
+	import type { Link as _Link } from './Link.svelte'
 
 	type Props = {
 		user: null | Auth.UserData
@@ -18,10 +20,16 @@
 
 	let cityChooseModalVisible = $state(false)
 
-	let nav = [
-		{ href: '#', text: 'О проекте' },
-		{ href: '#', text: 'Подписка' },
-		{ href: '#', text: 'Единый абонемент' },
+	let nav: Array<_Link> = [
+		{
+			text: 'Каталог',
+			children: [
+				{ href: '/catalog/events', text: 'Мероприятия' },
+				{ href: '/catalog/gyms', text: 'Комплекс' }
+			]
+		},
+		{ href: '/map', text: 'Карта' },
+		{ href: '#', text: 'О нас' },
 		{ href: '#', text: 'Стать партнером' }
 	]
 
@@ -57,7 +65,7 @@
 
 	<nav class:visible={navVisible}>
 		{#each nav as link}
-			<a href={link.href}>{link.text}</a>
+			<Link {...link} />
 		{/each}
 	</nav>
 
@@ -136,7 +144,6 @@
 	nav {
 		justify-self: center;
 		display: flex;
-		gap: 30px;
 		margin-left: auto;
 		font-size: 14px;
 

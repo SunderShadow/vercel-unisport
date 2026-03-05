@@ -15,6 +15,6 @@
 	@use '$scss/mixins/scr';
 
 	.content :global > * + * {
-    margin-top: 20px;
+		margin-top: 20px;
 	}
 </style>

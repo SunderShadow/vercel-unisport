@@ -1,13 +1,13 @@
 @mixin text {
-  &.rating-more-than-4-color {
-    color: var(--rating-more-than-4-color);
-  }
+	&.rating-more-than-4-color {
+		color: var(--rating-more-than-4-color);
+	}
 
-  &.rating-4-and-less {
-    color: var(--rating-4-and-less-color);
-  }
+	&.rating-4-and-less {
+		color: var(--rating-4-and-less-color);
+	}
 
-  &.rating-less-than-3-color {
-    color: var(--rating-less-than-3-color);
-  }
+	&.rating-less-than-3-color {
+		color: var(--rating-less-than-3-color);
+	}
 }

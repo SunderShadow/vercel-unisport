@@ -5,13 +5,11 @@
 	import favicon from '$lib/assets/favicon.svg'
 	import Header from '../+layout/Header.svelte'
 	import Footer from '../+layout/Footer.svelte'
-	import { page } from "$app/state"
+	import { page } from '$app/state'
 
 	let { children, data } = $props()
 
-	const hideFooterOn = [
-		'/map'
-	]
+	const hideFooterOn = ['/map']
 
 	let footerVisible = true
 

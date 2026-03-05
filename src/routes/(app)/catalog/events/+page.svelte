@@ -1,12 +1,13 @@
-<script>
+<script lang="ts">
 	import '@splidejs/svelte-splide/css'
 
 	import Input from '$lib/components/Form/Input.svelte'
 	import Button from '$lib/components/Button/Button.svelte'
 	import Timetable from '$lib/components/Timetable/Timetable.svelte'
 
-	import img2 from '../+page/Section7/assets/img_2.png'
-	import img3 from '../+page/Section7/assets/img_3.png'
+	import img2 from '../../+page/Section7/assets/img_2.png'
+	import img3 from '../../+page/Section7/assets/img_3.png'
+
 	import FastArticle from '$lib/components/FastArticle/FastArticle.svelte'
 	import { SplideSlide } from '@splidejs/svelte-splide'
 	import Slider from '$lib/components/Slider/Slider.svelte'

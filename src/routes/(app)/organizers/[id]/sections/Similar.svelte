@@ -9,7 +9,7 @@
 <section id="similar" class="container">
 	<h2>Прошедшие мероприятия</h2>
 
-	<Slider options={{perPage: 3}}>
+	<Slider options={{ perPage: 3 }}>
 		{#snippet slides()}
 			{#each Array(3) as _}
 				<SplideSlide>

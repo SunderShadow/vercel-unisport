@@ -40,30 +40,30 @@
 
 <style lang="scss">
 	.splide-gallery-wrapper {
-    display: contents;
+		display: contents;
 
-    :global {
-      .splide {
-        padding-bottom: 21px;
-      }
+		:global {
+			.splide {
+				padding-bottom: 21px;
+			}
 
-      .splide__track {
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
+			.splide__track {
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
 
 			.splide__pagination {
 				bottom: 50px;
 			}
-      .splide__pagination__page {
-        background: none;
-				border: 1px solid #FFFFFF;
-      }
+			.splide__pagination__page {
+				background: none;
+				border: 1px solid #ffffff;
+			}
 
-      .splide__pagination__page.is-active {
-        background: #FFFFFF;
-        opacity: 1;
-      }
-    }
+			.splide__pagination__page.is-active {
+				background: #ffffff;
+				opacity: 1;
+			}
+		}
 	}
 </style>

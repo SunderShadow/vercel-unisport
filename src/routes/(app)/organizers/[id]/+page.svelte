@@ -43,15 +43,15 @@
 				}
 			}
 			> section:last-of-type {
-        margin-bottom: 50px;
-      }
+				margin-bottom: 50px;
+			}
 
-      .section-group {
-        display: grid;
-        gap: 20px;
+			.section-group {
+				display: grid;
+				gap: 20px;
 
 				> div > section + section {
-          margin-top: 20px;
+					margin-top: 20px;
 				}
 
 				@include scr.tablet {
@@ -59,19 +59,19 @@
 						grid-row: 2;
 					}
 
-          > :last-child {
-            grid-row: 1;
-          }
+					> :last-child {
+						grid-row: 1;
+					}
 				}
-        @include scr.higher_than_tablet {
-          grid-template-columns: 1fr 1fr;
+				@include scr.higher_than_tablet {
+					grid-template-columns: 1fr 1fr;
 
-          > section {
-            margin-top: 0;
-            margin-bottom: 0;
-          }
-        }
-      }
+					> section {
+						margin-top: 0;
+						margin-bottom: 0;
+					}
+				}
+			}
 		}
 	}
 </style>

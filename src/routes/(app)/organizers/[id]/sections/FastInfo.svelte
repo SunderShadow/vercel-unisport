@@ -14,7 +14,6 @@
 			</a>
 		</div>
 	</div>
-
 </section>
 
 <style lang="scss">
@@ -55,7 +54,5 @@
 				font-size: 16px;
 			}
 		}
-
 	}
-
 </style>

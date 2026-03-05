@@ -18,10 +18,10 @@
 </section>
 
 <style lang="scss">
-	@use "$scss/mixins/bg";
+	@use '$scss/mixins/bg';
 
 	section {
-    display: flex;
+		display: flex;
 		flex-direction: column;
 		flex-grow: 1;
 
@@ -31,17 +31,17 @@
 	}
 
 	ul {
-    margin-top: auto !important;
+		margin-top: auto !important;
 		font-size: 1.1em;
-    padding-left: 2.5ex;
+		padding-left: 2.5ex;
 	}
 
 	.btn {
-    margin-top: 30px;
+		margin-top: 30px;
 
 		:global button {
-      background: #fff;
-      color: var(--text-color);
+			background: #fff;
+			color: var(--text-color);
 		}
 	}
 </style>

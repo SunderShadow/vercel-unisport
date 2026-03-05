@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-	<link rel="preload" as="image" href={headerBG.img.src} fetchpriority="high"/>
+	<link rel="preload" as="image" href={headerBG.img.src} fetchpriority="high" />
 </svelte:head>
 
 <header class:show_img={showImg} style:background-image={`url("${headerBG.img.src}")`}>
@@ -27,7 +27,7 @@
 		<div class="content">
 			<div class="main_info">
 				<div class="gym_info">
-					<enhanced:img src={gymEnhanced} width="100" height="100"/>
+					<enhanced:img src={gymEnhanced} width="100" height="100" />
 					<div>
 						<p class="subtitle">Фитнес-клуб</p>
 						<div class="title">
@@ -48,8 +48,10 @@
 								</Button>
 							</div>
 						</div>
-						<p class="subtitle">Современный фитнес-клуб с профессиональным оборудованием и квалифицированными тренерами</p>
-
+						<p class="subtitle">
+							Современный фитнес-клуб с профессиональным оборудованием и квалифицированными
+							тренерами
+						</p>
 					</div>
 				</div>
 
@@ -71,15 +73,15 @@
 	@use '$scss/mixins/scr';
 	@use '$scss/mixins/rating';
 
-  .gym_info {
-    display: flex;
-    gap: 10px;
-    align-items: start;
+	.gym_info {
+		display: flex;
+		gap: 10px;
+		align-items: start;
 
-    img {
-      border-radius: 10rem;
-    }
-  }
+		img {
+			border-radius: 10rem;
+		}
+	}
 
 	header {
 		position: relative;
@@ -147,15 +149,15 @@
 		}
 	}
 
-  h1:first-child,
-  p:first-child {
-    margin-top: 0;
-  }
+	h1:first-child,
+	p:first-child {
+		margin-top: 0;
+	}
 
-  h1:last-child,
-  p:last-child {
-    margin-bottom: 0;
-  }
+	h1:last-child,
+	p:last-child {
+		margin-bottom: 0;
+	}
 
 	.title {
 		display: flex;
@@ -207,12 +209,13 @@
 		}
 	}
 
-  .info :global {
-    button, .button {
-      background: #ffffff26;
-      border: 1px solid #ffffff;
-    }
-  }
+	.info :global {
+		button,
+		.button {
+			background: #ffffff26;
+			border: 1px solid #ffffff;
+		}
+	}
 
 	@include scr.tablet {
 		.rating,
@@ -238,7 +241,7 @@
 			font-weight: 700;
 			margin-top: 10px;
 
-			@include rating.text
+			@include rating.text;
 		}
 	}
 </style>

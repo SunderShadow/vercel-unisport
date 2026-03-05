@@ -20,14 +20,11 @@
 
 	let el: HTMLElement = $state()
 
-	let {
-		children,
-		coordinates
-	}: Props = $props()
+	let { children, coordinates }: Props = $props()
 
 	onMount(() => {
 		el.remove()
-		map.addChild(new ymaps3.YMapMarker({coordinates}, el))
+		map.addChild(new ymaps3.YMapMarker({ coordinates }, el))
 	})
 
 	onDestroy(() => {

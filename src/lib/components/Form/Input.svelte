@@ -12,9 +12,13 @@
 	let inputEl = $state()
 </script>
 
-<div class="input" onclick={() => {inputEl.focus()}}>
+<div
+	class="input"
+	onclick={() => {
+		inputEl.focus()
+	}}>
 	{@render pre?.()}
-	<input {...restProps} bind:this={inputEl}/>
+	<input {...restProps} bind:this={inputEl} />
 	{@render post?.()}
 </div>
 
@@ -27,7 +31,7 @@
 	}
 
 	.input {
-    cursor: text;
+		cursor: text;
 	}
 
 	div {

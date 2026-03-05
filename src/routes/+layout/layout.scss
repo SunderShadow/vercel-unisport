@@ -8,11 +8,11 @@
 }
 
 :root {
-  -webkit-tap-highlight-color: transparent;
+	-webkit-tap-highlight-color: transparent;
 	font-family: 'Geist', sans-serif;
 	font-size: 16px;
-  color: var(--text-color);
-  scroll-behavior: smooth;
+	color: var(--text-color);
+	scroll-behavior: smooth;
 
 	@include scr.mobile {
 		font-size: 14px;
@@ -20,7 +20,7 @@
 }
 
 section {
-  scroll-margin-block-start: var(--header-height);
+	scroll-margin-block-start: var(--header-height);
 }
 
 html,
@@ -130,7 +130,8 @@ h2 {
 		font-size: 18px;
 	}
 
-	button, .button {
+	button,
+	.button {
 		font-size: 18px;
 		font-weight: 600 !important;
 	}

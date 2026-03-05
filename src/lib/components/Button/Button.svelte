@@ -7,8 +7,8 @@
 		round?: boolean
 		rounded?: boolean
 		disabled?: boolean
-		fullWidth?: boolean,
-		href?: null|string,
+		fullWidth?: boolean
+		href?: null | string
 		bg?: 'default' | 'white'
 	}
 
@@ -44,7 +44,8 @@
 <style lang="scss">
 	@use '$scss/mixins/bg';
 
-	button, a {
+	button,
+	a {
 		display: flex;
 		align-items: center;
 		justify-content: center;

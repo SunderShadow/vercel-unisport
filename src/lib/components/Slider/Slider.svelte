@@ -40,25 +40,25 @@
 
 <style lang="scss">
 	.splide-wrapper {
-    display: contents;
+		display: contents;
 
-    :global {
-      .splide {
-        padding-bottom: 21px;
-      }
+		:global {
+			.splide {
+				padding-bottom: 21px;
+			}
 
-      .splide__track {
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
+			.splide__track {
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
 
-      .splide__pagination__page {
-        background: #d1d5db;
-      }
+			.splide__pagination__page {
+				background: #d1d5db;
+			}
 
-      .splide__pagination__page.is-active {
-        background: linear-gradient(90deg, #f66d49 0%, #f43f5e 100%);
-      }
-    }
+			.splide__pagination__page.is-active {
+				background: linear-gradient(90deg, #f66d49 0%, #f43f5e 100%);
+			}
+		}
 	}
 </style>

@@ -53,7 +53,12 @@
 			{#if option.label}
 				<div class="option-label">{option.label}</div>
 			{/if}
-			<div class="option" class:selected={id === selected} onclick={() => {select(id)}}>
+			<div
+				class="option"
+				class:selected={id === selected}
+				onclick={() => {
+					select(id)
+				}}>
 				<div>
 					<h3>{option.title}</h3>
 					{#if option.economy}
@@ -75,51 +80,51 @@
 </section>
 
 <style lang="scss">
-	@use "$scss/mixins/bg";
-	@use "$scss/mixins/scr";
+	@use '$scss/mixins/bg';
+	@use '$scss/mixins/scr';
 
 	.option-label + .option,
 	.option + .option-label,
 	.option + .option {
-    margin-top: 20px;
+		margin-top: 20px;
 	}
 
-  @include scr.mobile {
-    .option-label + .option {
-      margin-top: 10px;
+	@include scr.mobile {
+		.option-label + .option {
+			margin-top: 10px;
 		}
-  }
+	}
 
 	.option-label {
 		color: var(--text-content-color);
 	}
 
 	.option {
-    display: flex;
+		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
 
 		padding: 20px;
-    border: 1px solid #E5E7EB;
+		border: 1px solid #e5e7eb;
 		border-radius: 14px;
 
 		cursor: pointer;
 
-    opacity: .8;
+		opacity: 0.8;
 
-    transition-property: border-color, opacity;
-    transition-duration: var(--transition-duration);
+		transition-property: border-color, opacity;
+		transition-duration: var(--transition-duration);
 
 		.badge {
 			background: #65656533;
 			padding: 2px 10px;
 			border-radius: 10em;
-			font-size: .75em;
-      margin-top: 12px;
+			font-size: 0.75em;
+			margin-top: 12px;
 		}
 
 		h3 {
-      margin: 0;
+			margin: 0;
 		}
 
 		.cost {
@@ -132,7 +137,7 @@
 				background-clip: text;
 				color: transparent;
 				font-weight: 600;
-        font-size: 2.25em;
+				font-size: 2.25em;
 
 				@include scr.mobile {
 					font-size: 1.15em;
@@ -140,19 +145,20 @@
 			}
 
 			> span {
-        display: block;
+				display: block;
 				color: var(--text-content-color);
-        margin-top: 2px;
+				margin-top: 2px;
 			}
 		}
 
 		&.selected {
-      border-color: #F66D49;
-      opacity: 1;
-    }
+			border-color: #f66d49;
+			opacity: 1;
+		}
 
-    &:hover, &.selected {
-      opacity: 1;
-    }
+		&:hover,
+		&.selected {
+			opacity: 1;
+		}
 	}
 </style>
