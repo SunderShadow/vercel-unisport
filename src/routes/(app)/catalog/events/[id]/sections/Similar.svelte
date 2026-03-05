@@ -1,6 +1,6 @@
 <script lang="ts">
-	import img2 from '../../../+page/Section7/assets/img_2.png'
-	import img3 from '../../../+page/Section7/assets/img_3.png'
+	import img2 from '$lib/../routes/(app)/+page/Section7/assets/img_2.png'
+	import img3 from '$lib/../routes/(app)/+page/Section7/assets/img_3.png'
 	import Slider from '$lib/components/Slider/Slider.svelte'
 	import { SplideSlide } from '@splidejs/svelte-splide'
 	import FastArticle from '$lib/components/FastArticle/FastArticle.svelte'
