@@ -52,7 +52,7 @@
         color: #fff;
 
         svg {
-          fill: #fff
+          fill: #fff;
         }
 
         &::before {
@@ -115,6 +115,15 @@
   .children :global {
     a:has(+ a:hover)::before {
     	transform: translateY(100%);
+    }
+
+    a:hover + a + a {
+      transition: none;
+		}
+
+    a:has(+ a + a:hover)::before {
+      transform: translateY(100%);
+			transition: none;
     }
   }
 
