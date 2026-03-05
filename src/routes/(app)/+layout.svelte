@@ -11,7 +11,7 @@
 
 	const hideFooterOn = ['/map']
 
-	let footerVisible = true
+	let footerVisible = $state(true)
 
 	for (let i = 0; i < hideFooterOn.length; i++) {
 		if (page.url.pathname.startsWith(hideFooterOn[i])) {
