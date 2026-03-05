@@ -1,5 +1,7 @@
 <script module lang="ts">
 	import Self from './Link.svelte'
+	import {page} from '$app/state'
+
 	export type Link = {
 		href?: string
 		text: string
@@ -33,7 +35,7 @@
 		</div>
 	</div>
 {:else}
-	<a class="link" {href}>{text}</a>
+	<a class="link" class:active={page.url.pathname.startsWith(href)} {href}>{text}</a>
 {/if}
 
 <style lang="scss">
@@ -43,24 +45,43 @@
 		position: relative;
 	}
 
-  .link-tree:hover {
-		> .tree-name {
-      color: #fff;
+	:global {
+    .link-tree:hover,
+    .link-tree:has(a.active) > {
+      .tree-name {
+        color: #fff;
 
-      svg {fill: #fff}
+        svg {
+          fill: #fff
+        }
 
-      &::before {
-        transform: scale(1);
+        &::before {
+          transform: none;
+        }
       }
+    }
+
+    .link-tree:has(a.active) > .tree-name::before {
+      opacity: 1;
 		}
 	}
+
+  .link.active {
+    color: #fff;
+    svg {fill: #fff};
+
+    &::before {
+      transform: none !important;
+      opacity: 1;
+    }
+  }
 
 	a:hover {
     color: #fff;
     svg {fill: #fff};
 
     &::before {
-      transform: scale(1);
+      transform: none;
     }
 	}
 
@@ -81,10 +102,12 @@
 			bottom: 0;
 			right: 0;
 
+      opacity: .75;
 			@include bg.accent;
 			transform: translateY(-100%);
 
-			transition: transform var(--transition-duration);
+			transition-property: transform, opacity;
+			transition-duration: var(--transition-duration);
 			z-index: -1;
 		}
 	}
@@ -147,7 +170,6 @@
 		opacity: var(--visible);
 
 		border-radius: 0 0 10px 10px;
-		border: 1px solid #dadada;
 		border-top: none;
 		overflow: hidden;
 
