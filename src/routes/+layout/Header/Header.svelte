@@ -2,7 +2,7 @@
 	import type { Auth } from '$lib/types'
 
 	import logo from '$lib/assets/img/logo.png?enhanced&format=webp'
-	import { goto, onNavigate } from '$app/navigation'
+	import { afterNavigate, goto, onNavigate } from '$app/navigation'
 	import CityChooseModal from './CityChooseModal.svelte'
 	import Link from './Link.svelte'
 	import type { Link as _Link } from './Link.svelte'
@@ -33,7 +33,7 @@
 		{ href: '#', text: 'Стать партнером' }
 	]
 
-	onNavigate(() => {
+	afterNavigate(() => {
 		navVisible = false
 	})
 
