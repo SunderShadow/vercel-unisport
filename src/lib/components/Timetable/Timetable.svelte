@@ -13,8 +13,9 @@
 	let totalViewCount = $derived.by(() => {
 		let canContain = Math.floor(containerWidth / 52)
 		if (isNaN(canContain)) {
-			canContain = 7
+			canContain = 1
 		}
+
 
 		return canContain
 	})

@@ -104,6 +104,8 @@
 </main>
 
 <style lang="scss">
+	@use "$scss/mixins/scr";
+
 	main {
 		margin-top: var(--header-height);
 		padding-top: 50px;
@@ -146,6 +148,14 @@
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
 			gap: 20px;
+
+			@include scr.tablet {
+        grid-template-columns: 1fr 1fr;
+			}
+			
+      @include scr.mobile {
+        grid-template-columns: 1fr;
+      }
 		}
 	}
 </style>
