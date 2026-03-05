@@ -1,6 +1,6 @@
 <script module lang="ts">
 	import Self from './Link.svelte'
-	import {page} from '$app/state'
+	import { page } from '$app/state'
 
 	export type Link = {
 		href?: string
@@ -47,71 +47,76 @@
 	}
 
 	:global {
-    .link-tree:hover,
-    .link-tree:has(a.active) > {
-      .tree-name {
-        color: #fff;
+		.link-tree:hover,
+		.link-tree:has(a.active) > {
+			.tree-name {
+				color: #fff;
 
-        svg {
-          fill: #fff;
-        }
+				svg {
+					fill: #fff;
+				}
 
-        &::before {
-          transform: none;
-        }
-      }
-    }
+				&::before {
+					transform: none;
+				}
+			}
+		}
 
-    .link-tree:has(a.active) > .tree-name::before {
-      opacity: 1;
+		.link-tree:has(a.active) > .tree-name::before {
+			opacity: 1;
 		}
 	}
 
-  .link.active {
-    color: #fff;
-    svg {fill: #fff};
+	.link.active {
+		color: #fff;
+		svg {
+			fill: #fff;
+		}
 
-    &::before {
-      transform: none !important;
-      opacity: 1;
-    }
-  }
-
-	a:hover {
-    color: #fff;
-    svg {fill: #fff};
-
-    &::before {
-      transform: none;
-    }
+		&::before {
+			transform: none !important;
+			opacity: 1;
+		}
 	}
 
-  .tree-name {
+	a:hover {
+		color: #fff;
+		svg {
+			fill: #fff;
+		}
+
+		&::before {
+			transform: none;
+		}
+	}
+
+	.tree-name {
 		background: none;
 		border: none;
 		width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
 
-    svg {
-      width: 12px;
-      height: 12px;
-      fill: #000000;
+		svg {
+			width: 12px;
+			height: 12px;
+			fill: #000000;
 
-      transition: transform var(--transition-duration);
-    }
-  }
+			transition: transform var(--transition-duration);
+		}
+	}
 
-	.tree-name, a {
+	.tree-name,
+	a {
 		position: relative;
 		padding: 10px 30px;
 
 		@include scr.higher_than_tablet {
-      text-align: center;
+			text-align: center;
 		}
 
-    transition: color var(--transition-duration);
+		transition: color var(--transition-duration);
 
 		overflow: hidden;
 
@@ -123,12 +128,12 @@
 			bottom: 0;
 			right: 0;
 
-      opacity: .75;
+			opacity: 0.75;
 			@include bg.accent;
 			transform: translateY(-101%);
 
 			@include scr.tablet {
-        transform: translateX(-101%);
+				transform: translateX(-101%);
 			}
 
 			transition-property: transform, opacity;
@@ -137,25 +142,25 @@
 		}
 	}
 
-  .children :global {
+	.children :global {
 		a::before {
-      @include scr.tablet {
-        transform: translateY(-101%);
-      }
+			@include scr.tablet {
+				transform: translateY(-101%);
+			}
 		}
-    a:has(+ a:hover)::before {
-    	transform: translateY(101%);
-    }
-
-    a:hover + a + a {
-      transition: none;
+		a:has(+ a:hover)::before {
+			transform: translateY(101%);
 		}
 
-    a:has(+ a + a:hover)::before {
-      transform: translateY(101%);
+		a:hover + a + a {
 			transition: none;
-    }
-  }
+		}
+
+		a:has(+ a + a:hover)::before {
+			transform: translateY(101%);
+			transition: none;
+		}
+	}
 
 	.link-tree {
 		border-radius: 14px 14px 0 0;
@@ -163,17 +168,17 @@
 		cursor: default;
 
 		@include scr.tablet {
-      svg {
-        transform: rotate(270deg);
-      }
+			svg {
+				transform: rotate(270deg);
+			}
 		}
 
-    @include scr.higher_than_tablet {
-      &:hover {
-        svg {
-          transform: rotate(180deg);
-        }
-      }
+		@include scr.higher_than_tablet {
+			&:hover {
+				svg {
+					transform: rotate(180deg);
+				}
+			}
 
 			:global a {
 				padding-left: 0;
@@ -182,21 +187,21 @@
 		}
 	}
 	@include scr.higher_than_tablet {
-    .link-tree:hover {
-      > .children {
-        --visible: 1;
-        visibility: visible;
-      }
-    }
+		.link-tree:hover {
+			> .children {
+				--visible: 1;
+				visibility: visible;
+			}
+		}
 	}
 
 	@include scr.tablet {
-    .link-tree:not(:has(.children:hover)):hover {
-      > .children {
-        --visible: 1;
-        visibility: visible;
-      }
-    }
+		.link-tree:not(:has(.children:hover)):hover {
+			> .children {
+				--visible: 1;
+				visibility: visible;
+			}
+		}
 	}
 
 	.children {
@@ -208,11 +213,11 @@
 		left: 50%;
 		transform: translateX(-50%) translateY(calc(-10px * (1 - var(--visible))));
 
-    @include scr.tablet {
-      left: 100%;
+		@include scr.tablet {
+			left: 100%;
 			top: 0;
-      transform: none;
-    }
+			transform: none;
+		}
 
 		visibility: hidden;
 		opacity: var(--visible);
@@ -225,8 +230,8 @@
 		transition-property: opacity, visibility, transform;
 		transform-origin: top;
 
-    background: rgba(255, 255, 255, .85);
-    backdrop-filter: blur(64px);
+		background: rgba(255, 255, 255, 0.85);
+		backdrop-filter: blur(64px);
 	}
 
 	.children-wrapper {

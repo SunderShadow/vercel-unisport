@@ -16,7 +16,6 @@
 			canContain = 1
 		}
 
-
 		return canContain
 	})
 

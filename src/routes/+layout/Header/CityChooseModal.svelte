@@ -44,7 +44,7 @@
 
 <Modal title="Выберите город" bind:visible>
 	<div class="choose">
-		<Search placeholder={current._t}/>
+		<Search placeholder={current._t} />
 
 		<div class="cities">
 			{#each options as option}

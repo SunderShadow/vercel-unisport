@@ -1,8 +1,6 @@
 <script lang="ts">
 	import '@splidejs/svelte-splide/css'
 
-	import Input from '$lib/components/Form/Input.svelte'
-	import Button from '$lib/components/Button/Button.svelte'
 	import Timetable from '$lib/components/Timetable/Timetable.svelte'
 
 	import img2 from '../../+page/Section7/assets/img_2.png'
@@ -104,7 +102,7 @@
 </main>
 
 <style lang="scss">
-	@use "$scss/mixins/scr";
+	@use '$scss/mixins/scr';
 
 	main {
 		margin-top: var(--header-height);
@@ -119,8 +117,8 @@
 	}
 
 	#search :global .search {
-    margin-left: auto;
-    margin-right: auto;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.title {
@@ -150,12 +148,12 @@
 			gap: 20px;
 
 			@include scr.tablet {
-        grid-template-columns: 1fr 1fr;
+				grid-template-columns: 1fr 1fr;
 			}
-			
-      @include scr.mobile {
-        grid-template-columns: 1fr;
-      }
+
+			@include scr.mobile {
+				grid-template-columns: 1fr;
+			}
 		}
 	}
 </style>

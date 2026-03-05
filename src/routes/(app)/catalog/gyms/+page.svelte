@@ -1,15 +1,15 @@
 <script lang="ts">
-	import {page} from "$app/state"
+	import { page } from '$app/state'
 
 	import Button from '$lib/components/Button/Button.svelte'
 	import mapEnhanced from './assets/map.png?enhanced&format=webp'
 
-	import fitnessEnhanced from "./assets/fitness.png?enhanced&format=webp"
-	import swimmingEnhanced from "./assets/swimming.png?enhanced&format=webp"
-	import yogaEnhanced from "./assets/yoga.png?enhanced&format=webp"
-	import danceEnhanced from "./assets/dance.png?enhanced&format=webp"
-	import cyclingEnhanced from "./assets/cycling.png?enhanced&format=webp"
-	import pilatesEnhanced from "./assets/pilates.png?enhanced&format=webp"
+	import fitnessEnhanced from './assets/fitness.png?enhanced&format=webp'
+	import swimmingEnhanced from './assets/swimming.png?enhanced&format=webp'
+	import yogaEnhanced from './assets/yoga.png?enhanced&format=webp'
+	import danceEnhanced from './assets/dance.png?enhanced&format=webp'
+	import cyclingEnhanced from './assets/cycling.png?enhanced&format=webp'
+	import pilatesEnhanced from './assets/pilates.png?enhanced&format=webp'
 </script>
 
 <svelte:head>
@@ -82,7 +82,7 @@
 </main>
 
 <style lang="scss">
-	@use "$scss/mixins/scr";
+	@use '$scss/mixins/scr';
 
 	main {
 		padding-top: var(--header-height);
@@ -97,18 +97,17 @@
 		padding: 20px;
 		margin: 50px auto;
 
-
-    @include scr.mobile {
-      padding: 0;
-      margin: 0;
-    }
+		@include scr.mobile {
+			padding: 0;
+			margin: 0;
+		}
 
 		> div {
 			padding: 52px;
 
-      @include scr.tablet {
-        padding: 20px;
-      }
+			@include scr.tablet {
+				padding: 20px;
+			}
 
 			border-radius: 14px;
 
@@ -117,10 +116,10 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 
-      @include scr.mobile {
+			@include scr.mobile {
 				background: none;
-        padding: 0;
-      }
+				padding: 0;
+			}
 		}
 
 		:global .button {
@@ -130,42 +129,41 @@
 		}
 	}
 
-  #categories {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 25px;
+	#categories {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: repeat(6, 1fr);
+		gap: 25px;
 
-
-    margin-top: 50px;
-    margin-bottom: 50px;
+		margin-top: 50px;
+		margin-bottom: 50px;
 
 		@include scr.higher_than_tablet {
-      height: 750px;
+			height: 750px;
 		}
 
 		@include scr.mobile {
 			gap: 10px;
 			grid-template-rows: auto;
-    }
-  }
+		}
+	}
 
-  .category {
+	.category {
 		position: relative;
 		--padding: 20px;
 
-    padding: var(--padding);
-    grid-column: span 2;
-    grid-row: span 2;
+		padding: var(--padding);
+		grid-column: span 2;
+		grid-row: span 2;
 
 		@include scr.tablet {
-      grid-column: span 3;
-      height: 150px;
+			grid-column: span 3;
+			height: 150px;
 		}
 
 		@include scr.mobile {
-      grid-column: span 6;
-      grid-row: auto;
+			grid-column: span 6;
+			grid-row: auto;
 		}
 
 		border-radius: 14px;
@@ -173,23 +171,26 @@
 
 		img {
 			position: absolute;
-			top: 0; left: 0; bottom: 0; right: 0;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
 			object-fit: cover;
 			max-width: 100%;
 			max-height: 100%;
 			border-radius: 14px;
 
-      transition: transform var(--transition-duration);
+			transition: transform var(--transition-duration);
 			z-index: 0;
 		}
 
-    &:hover img {
+		&:hover img {
 			transform: scale(1.1);
 		}
 
 		&::before {
 			content: '';
-      position: absolute;
+			position: absolute;
 			top: 0;
 			left: 0;
 			bottom: 0;
@@ -197,13 +198,13 @@
 
 			background-color: rgba(0, 0, 0, 0.2);
 			z-index: 1;
-      border-radius: 14px;
+			border-radius: 14px;
 		}
 
 		h2 {
-      margin-top: auto;
-      margin-bottom: 0;
-      color: #fff;
+			margin-top: auto;
+			margin-bottom: 0;
+			color: #fff;
 
 			z-index: 2;
 
@@ -212,7 +213,7 @@
 
 				&::before {
 					content: '';
-          position: absolute;
+					position: absolute;
 					top: 0;
 					left: 0;
 					bottom: 0;
@@ -222,35 +223,41 @@
 			}
 		}
 
-    & > div {
-      display: flex;
+		& > div {
+			display: flex;
 			height: 100%;
 			width: 100%;
-    }
-
-    @include scr.higher_than_tablet {
-      &:nth-child(1),
-      &:nth-child(4) {
-        grid-row: span 4;
-        background-size: auto 100%;
-
-        &:hover {background-size: auto 110%}
-      }
-
-      &:nth-child(2),
-      &:nth-child(6) {
-        grid-row: span 2;
-        background-size: 100% 100%;
-
-        &:hover {background-size: 110% 110%}
-      }
-
-      &:nth-child(3),
-      &:nth-child(5) {
-        grid-row: span 3;
-        background-size: 130%;
-        &:hover {background-size: 140%}
-      }
 		}
-  }
+
+		@include scr.higher_than_tablet {
+			&:nth-child(1),
+			&:nth-child(4) {
+				grid-row: span 4;
+				background-size: auto 100%;
+
+				&:hover {
+					background-size: auto 110%;
+				}
+			}
+
+			&:nth-child(2),
+			&:nth-child(6) {
+				grid-row: span 2;
+				background-size: 100% 100%;
+
+				&:hover {
+					background-size: 110% 110%;
+				}
+			}
+
+			&:nth-child(3),
+			&:nth-child(5) {
+				grid-row: span 3;
+				background-size: 130%;
+				&:hover {
+					background-size: 140%;
+				}
+			}
+		}
+	}
 </style>
