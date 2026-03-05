@@ -88,7 +88,7 @@
 			}
 		}
 
-		@include scr.mobile {
+		@include scr.tablet {
 			grid-template-columns: repeat(1, 1fr);
 		}
 	}
