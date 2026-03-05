@@ -164,6 +164,11 @@
 
 			flex-direction: column;
 
+			.children {
+				--visibility: 0;
+				visibility: hidden;
+			}
+
 			position: fixed;
 			top: var(--header-height);
 			height: calc(100dvh - var(--header-height));
