@@ -7,5 +7,7 @@ WORKDIR /home/node/app
 
 EXPOSE ${PORT}
 
+RUN pnpm install
 RUN pnpm run build
+
 CMD ["sh", "./start-container.sh"]
