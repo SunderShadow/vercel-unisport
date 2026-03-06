@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --port=80",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
@@ -13,9 +13,6 @@
 		"lint": "prettier --check .",
 		"format": "prettier --write ."
 	},
-    "dependencies": {
-      "@yandex/ymaps3-types": "^1.0.18856213"
-    },
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^7.0.0",
 		"@sveltejs/adapter-node": "^5.5.2",
@@ -35,7 +32,8 @@
 		"normalize.css": "^8.0.1",
 		"chart.js": "^4.5.1",
 		"@splidejs/svelte-splide": "^0.2.9",
-		"@yandex/ymaps3-default-ui-theme": "^0.0.24"
+		"@yandex/ymaps3-default-ui-theme": "^0.0.24",
+        "@yandex/ymaps3-types": "^1.0.18856213"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [

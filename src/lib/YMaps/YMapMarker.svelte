@@ -9,7 +9,7 @@
 
 <script lang="ts">
 	import { getContext, onDestroy, onMount } from 'svelte'
-	import { type YMap } from '@yandex/ymaps3-types'
+	import type { YMap } from '@yandex/ymaps3-types'
 
 	const context: {
 		map: YMap
