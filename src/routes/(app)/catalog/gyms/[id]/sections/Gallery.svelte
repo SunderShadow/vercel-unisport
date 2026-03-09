@@ -1,14 +1,19 @@
 <script lang="ts">
 	import galleryImg from '../assets/gallery.png'
+	import FullscreenGallery from '$lib/components/FullscreenGallery/FullscreenGallery.svelte'
+
+	let galleryVisible = $state(false)
 </script>
+
+<FullscreenGallery images={[galleryImg + '?0', galleryImg + '?1', galleryImg + '?2', galleryImg + '?3']} bind:visible={galleryVisible}/>
 
 <section id="gallery" class="box">
 	<h2 class="block">Фотогалерея</h2>
 	<div class="block content">
-		<enhanced:img src={galleryImg} width="315" height="236" />
-		<enhanced:img src={galleryImg} width="315" height="236" />
-		<enhanced:img src={galleryImg} width="315" height="236" />
-		<enhanced:img src={galleryImg} width="315" height="236" />
+		<enhanced:img src={galleryImg} width="315" height="236" onclick={() => {galleryVisible = true}}/>
+		<enhanced:img src={galleryImg} width="315" height="236" onclick={() => {galleryVisible = true}} />
+		<enhanced:img src={galleryImg} width="315" height="236" onclick={() => {galleryVisible = true}}/>
+		<enhanced:img src={galleryImg} width="315" height="236" onclick={() => {galleryVisible = true}}/>
 	</div>
 </section>
 

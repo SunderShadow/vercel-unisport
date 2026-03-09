@@ -53,6 +53,7 @@
 </script>
 
 <CityChooseModal bind:visible={cityChooseModalVisible} />
+
 <header>
 	<button id="open-nav" class="default" aria-label="Открыть меню" onclick={toggleNav}>
 		<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -156,6 +157,21 @@
 
 		@media (min-width: 1231px) {
 			transform: translateX(20%);
+		}
+
+		@include scr.higher_than_tablet {
+      :global {
+        & > .link,
+        & .tree-name {
+          border-radius: 10em;
+        }
+        & .link-tree .tree-name {
+          transition: border-radius var(--transition-duration);
+        }
+        & .link-tree:hover .tree-name {
+          border-radius: 10em 10em 0 0;
+        }
+      }
 		}
 
 		@include scr.tablet {

@@ -67,6 +67,7 @@
 		}
 	}
 
+
 	.link.active {
 		color: #fff;
 		svg {
@@ -186,6 +187,7 @@
 			}
 		}
 	}
+
 	@include scr.higher_than_tablet {
 		.link-tree:hover {
 			> .children {
@@ -230,7 +232,7 @@
 		transition-property: opacity, visibility, transform;
 		transform-origin: top;
 
-		background: rgba(255, 255, 255, 0.85);
+		background: rgba(255, 255, 255, 0.5);
 		backdrop-filter: blur(64px);
 	}
 
