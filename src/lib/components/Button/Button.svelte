@@ -50,7 +50,8 @@
 		align-items: center;
 		justify-content: center;
 		gap: 10px;
-		width: fit-content;
+		width: var(--width, fit-content);
+		height: var(--height, fit-content);
 
 		&.full-width {
 			width: 100%;
