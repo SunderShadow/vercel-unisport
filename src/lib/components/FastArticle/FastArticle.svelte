@@ -57,6 +57,7 @@
 	img {
 		width: 100%;
 		object-fit: cover;
+		border-radius: 14px;
 	}
 
 	time {
