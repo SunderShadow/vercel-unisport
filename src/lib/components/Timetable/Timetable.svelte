@@ -88,13 +88,13 @@
 						setCurrentDate(date)
 					}}>
 					<div>{date.getDate()}</div>
-					<div>{date.weekDay.shortName}</div>
+					<div class:holiday={date.weekDay.isHoliday}>{date.weekDay.shortName}</div>
 				</button>
 			{/each}
 
 			<button class="current">
 				<div>{currentDate.getDate()}</div>
-				<div>{currentDate.weekDay.shortName}</div>
+				<div class:holiday={currentDate.weekDay.isHoliday}>{currentDate.weekDay.shortName}</div>
 			</button>
 
 			{#each settings.after as date}
@@ -103,7 +103,7 @@
 						setCurrentDate(date)
 					}}>
 					<div>{date.getDate()}</div>
-					<div>{date.weekDay.shortName}</div>
+					<div class:holiday={date.weekDay.isHoliday}>{date.weekDay.shortName}</div>
 				</button>
 			{/each}
 		</div>
@@ -173,10 +173,15 @@
 					font-weight: 400;
 					color: var(--text-content-color);
 					text-transform: uppercase;
+
+          &.holiday {
+            color: var(--color-accent-2);
+          }
 				}
 			}
 		}
 	}
+
 	.next_day {
 		background: none;
 		outline: none;
