@@ -10,6 +10,42 @@
 	import { SplideSlide } from '@splidejs/svelte-splide'
 	import Slider from '$lib/components/Slider/Slider.svelte'
 	import Search from '$lib/components/Search/Search.svelte'
+	import ToggleFilters from '$lib/components/ToggleableFilters/ToggleableFilters.svelte'
+	import type {Props as Filter} from '$lib/components/ToggleableFilters/Filter.svelte'
+
+	const topFilters: Array<Filter> = [
+		{
+			name: 'Мастер-класс',
+			value: 'master'
+		},
+		{
+			name: 'Спортивные',
+			value: 'sport'
+		},
+		{
+			name: 'Активный отдых',
+			value: 'active'
+		},
+	]
+
+	let topFiltersValues = $state([])
+
+	const bottomFilters: Array<Filter> = [
+		{
+			name: 'Мастер-класс',
+			value: 'master'
+		},
+		{
+			name: 'Спортивные',
+			value: 'sport'
+		},
+		{
+			name: 'Активный отдых',
+			value: 'active'
+		},
+	]
+
+	let bottomFiltersValues = $state([])
 </script>
 
 <main>
@@ -22,8 +58,16 @@
 		<Search placeholder="Найти мероприятие" />
 	</div>
 
+	<div id="top-filters" class="container">
+		<ToggleFilters bind:values={topFiltersValues} filters={topFilters}/>
+	</div>
+
 	<div class="container timetable">
 		<Timetable />
+	</div>
+
+	<div id="bottom-filters" class="container">
+		<ToggleFilters bind:values={bottomFiltersValues} filters={bottomFilters}/>
 	</div>
 
 	<section class="container">
@@ -121,6 +165,16 @@
 		margin-right: auto;
 	}
 
+	#top-filters {
+    margin-bottom: 15px;
+    margin-top: 50px;
+	}
+
+	#bottom-filters {
+    margin-top: 15px;
+    margin-bottom: 50px;
+	}
+
 	.title {
 		text-align: center;
 
@@ -138,7 +192,7 @@
 	}
 
 	.timetable {
-		margin-bottom: 50px;
+		margin-bottom: 15px;
 	}
 
 	#all_events {
