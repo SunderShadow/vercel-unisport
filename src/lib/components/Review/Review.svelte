@@ -27,6 +27,9 @@
 		}
 	}
 
+	header {
+    margin-bottom: 10px;
+	}
 	.userinfo {
 		display: flex;
 		align-items: center;
