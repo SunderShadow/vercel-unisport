@@ -23,6 +23,7 @@
 3. `node build`
 
 ### Разработка на локале
+
 1. `pnpm install`
 2. `pnpm run dev --port=80`
 

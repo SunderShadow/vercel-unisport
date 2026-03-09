@@ -174,9 +174,9 @@
 					color: var(--text-content-color);
 					text-transform: uppercase;
 
-          &.holiday {
-            color: var(--color-accent-2);
-          }
+					&.holiday {
+						color: var(--color-accent-2);
+					}
 				}
 			}
 		}
